@@ -14,95 +14,145 @@ export default async function FeaturedBlogs() {
   if (blogs.length === 0) return null;
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-end justify-between mb-12">
+    <section className="py-16 md:py-24" style={{ background: "#f7f3ed" }}>
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
+        
+        {/* Header */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
-            <p className="text-sm font-semibold text-green-700 uppercase tracking-[0.2em] mb-3">
-              Insights
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6741" }}>
+                Insights & Stories
+              </span>
+            </div>
+            <h2
+              className="text-3xl md:text-4xl font-bold"
+              style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
+            >
               Latest from Our Blog
             </h2>
           </div>
+          
           <Link
             href="/blog"
-            className="hidden md:inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors"
+            className="group hidden md:inline-flex items-center gap-2.5 text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-sm"
+            style={{ 
+              background: "#ffffff", 
+              color: "#3d5c35", 
+              border: "1px solid #e4ddd2" 
+            }}
           >
             View All Articles
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg
+              className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2.5}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
             </svg>
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {blogs.map((blog: any) => (
-            <Link
-              key={blog.documentId}
-              href={`/blog/${blog.slug}`}
-              className="group flex flex-col md:flex-row gap-6 p-4 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-300"
-            >
-              <div className="md:w-48 flex-shrink-0">
-                <div className="aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
-                  {blog.coverImage ? (
-                    <img
-                      src={getStrapiURL(blog.coverImage.url)}
-                      alt={blog.coverImage.alternativeText || blog.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : blog.images?.[0] ? (
-                    <img
-                      src={getStrapiURL(blog.images[0].url)}
-                      alt={blog.images[0].alternativeText || blog.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-gray-300 text-sm">
-                      No Image
-                    </div>
-                  )}
-                </div>
-              </div>
+        {/* Blog Grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {blogs.map((blog: any) => {
+            const imageUrl = blog.coverImage?.url || blog.images?.[0]?.url;
+            const imageAlt = blog.coverImage?.alternativeText || blog.images?.[0]?.alternativeText || blog.title;
 
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-3 text-xs text-gray-400 mb-2">
-                  {blog.category && (
-                    <span className="text-green-700 font-medium">{blog.category}</span>
-                  )}
-                  {blog.publishedDate && (
-                    <>
-                      <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                      <span>{new Date(blog.publishedDate).toLocaleDateString("en-US", {
-                        month: "short",
-                        day: "numeric",
-                        year: "numeric",
-                      })}</span>
-                    </>
+            return (
+              <Link
+                key={blog.documentId}
+                href={`/blog/${blog.slug}`}
+                className="group flex flex-col sm:flex-row gap-5 p-5 rounded-2xl transition-all duration-300 hover:shadow-lg"
+                style={{ background: "#ffffff", border: "1px solid #e4ddd2" }}
+              >
+                {/* Image */}
+                <div className="sm:w-48 flex-shrink-0">
+                  <div className="aspect-[4/3] rounded-xl overflow-hidden" style={{ background: "#faf8f5" }}>
+                    {imageUrl ? (
+                      <img
+                        src={getStrapiURL(imageUrl)}
+                        alt={imageAlt}
+                        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <svg className="w-8 h-8" style={{ color: "#d0c8b8" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-2.5 min-h-[20px]">
+                    {blog.category && (
+                      <span
+                        className="text-[10px] font-semibold uppercase tracking-widest px-2 py-0.5 rounded"
+                        style={{ color: "#3d5c35", background: "#f7f3ed" }}
+                      >
+                        {blog.category}
+                      </span>
+                    )}
+                    {blog.publishedDate && (
+                      <>
+                        <span className="w-1 h-1 rounded-full flex-shrink-0" style={{ background: "#d0c8b8" }} />
+                        <span className="text-xs" style={{ color: "#a89d8e" }}>
+                          {new Date(blog.publishedDate).toLocaleDateString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                          })}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                  
+                  <h3
+                    className="text-lg font-semibold leading-snug line-clamp-2 mb-2 transition-colors duration-200 group-hover:text-[#3d5c35]"
+                    style={{ color: "#1e2a1a" }}
+                  >
+                    {blog.title}
+                  </h3>
+                  
+                  <p className="text-sm leading-relaxed line-clamp-2 mb-3" style={{ color: "#6b6355" }}>
+                    {blog.excerpt || "Discover insights into sustainable agriculture and the journey of Kenyan produce."}
+                  </p>
+                  
+                  {blog.author && (
+                    <p className="text-xs font-medium" style={{ color: "#a89d8e" }}>
+                      By {blog.author}
+                    </p>
                   )}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-green-700 transition-colors mb-2 line-clamp-2">
-                  {blog.title}
-                </h3>
-                <p className="text-gray-500 text-sm line-clamp-2 mb-3">
-                  {blog.excerpt || blog.description?.slice(0, 120)}
-                </p>
-                {blog.author && (
-                  <p className="text-sm text-gray-400">By {blog.author}</p>
-                )}
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
 
+        {/* Mobile CTA */}
         <div className="mt-8 text-center md:hidden">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors"
+            className="group inline-flex items-center gap-2.5 text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-sm"
+            style={{ 
+              background: "#ffffff", 
+              color: "#3d5c35", 
+              border: "1px solid #e4ddd2" 
+            }}
           >
             View All Articles
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
             </svg>
           </Link>
         </div>

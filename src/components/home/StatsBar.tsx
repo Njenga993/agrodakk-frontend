@@ -24,35 +24,22 @@ function AnimatedCounter({
 
   useEffect(() => {
     if (!started) return;
-
     let startTime: number;
     let animationFrame: number;
 
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
-      
       setCount(Math.floor(eased * target));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
+      if (progress < 1) animationFrame = requestAnimationFrame(animate);
     };
 
     animationFrame = requestAnimationFrame(animate);
-
     return () => cancelAnimationFrame(animationFrame);
   }, [target, duration, started]);
 
-  return (
-    <span>
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
+  return <span>{count.toLocaleString()}{suffix}</span>;
 }
 
 export default function StatsBar() {
@@ -64,36 +51,54 @@ export default function StatsBar() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Only animate once
+          observer.disconnect();
         }
       },
-      {
-        threshold: 0.3, // Trigger when 30% visible
-        rootMargin: "0px 0px -50px 0px",
-      }
+      { threshold: 0.3, rootMargin: "0px 0px -50px 0px" }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white border-b border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {stats.map((stat) => (
-            <div key={stat.label} className="group">
-              <div className="text-3xl md:text-4xl font-bold text-green-700 mb-1 group-hover:scale-110 transition-transform tabular-nums">
+    <section
+      ref={sectionRef}
+      style={{ background: "#f7f3ed", borderBottom: "1px solid #e4ddd2" }}
+    >
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+        <div className="grid grid-cols-2 md:grid-cols-4">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className="flex flex-col items-center justify-center py-8 px-6 text-center"
+              style={{
+                borderRight:
+                  i < stats.length - 1 ? "1px solid #e4ddd2" : "none",
+              }}
+            >
+              {/* Number */}
+              <div
+                className="text-4xl md:text-5xl font-bold tabular-nums leading-none mb-2"
+                style={{ color: "#3d5c35", letterSpacing: "-0.03em" }}
+              >
                 <AnimatedCounter
                   target={stat.number}
                   suffix={stat.suffix}
                   started={isVisible}
                 />
               </div>
-              <div className="text-gray-600 text-sm font-medium">
+
+              {/* Divider dot */}
+              <span
+                className="block w-1 h-1 rounded-full my-2"
+                style={{ background: "#7aad5e" }}
+              />
+
+              {/* Label */}
+              <div
+                className="text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "#8a7d6e" }}
+              >
                 {stat.label}
               </div>
             </div>

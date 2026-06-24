@@ -2,7 +2,6 @@ import Link from "next/link";
 import { getSiteSettings } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 
-// Change this to your Strapi image URL or a static image
 const ABOUT_HERO_IMAGE = "/uploads/Langat_a822855147.jpg";
 
 const stats = [
@@ -51,76 +50,101 @@ export default async function AboutPage() {
   } catch (e) {}
 
   return (
-    <main>
-      {/* Hero — Image Background + Wave Divider */}
-      <section className="relative h-[500px] md:h-[600px] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img
-            src={getStrapiURL(ABOUT_HERO_IMAGE)}
-            alt="AgroDakk farm"
-            className="w-full h-full object-cover"
-          />
-          {/* Dark overlay for text readability */}
-          <div className="absolute inset-0 bg-gray-900/60"></div>
-        </div>
+    <main style={{ background: "#f7f3ed" }}>
 
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 w-full">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold text-green-300 uppercase tracking-[0.2em] mb-4">
+      {/* ── Hero ── */}
+      <section
+        className="relative flex items-end overflow-hidden"
+        style={{ minHeight: "580px", background: "#0e1a0c" }}
+      >
+        <img
+          src={getStrapiURL(ABOUT_HERO_IMAGE)}
+          alt="AgroDakk farm"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0.4, objectPosition: "center 30%" }}
+        />
+        {/* Left vignette */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(14,26,12,0.92) 0%, rgba(14,26,12,0.55) 55%, rgba(14,26,12,0.1) 100%)",
+          }}
+        />
+        {/* Bottom fade to cream */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40"
+          style={{ background: "linear-gradient(to bottom, transparent, #f7f3ed)" }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-5 lg:px-8 w-full pb-24 pt-40">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+            <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#a8cc8c" }}>
               About Us
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Connecting farmers to
-              <br />
-              <span className="text-green-300">global opportunities</span>
-            </h1>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              {siteName} Ltd is a Kenyan agribusiness dedicated to producing and supplying
-              premium dried vegetables to local and international markets.
-            </p>
+            </span>
           </div>
-        </div>
-
-        {/* Wave Divider */}
-        <div className="absolute bottom-0 left-0 right-0 translate-y-px">
-          <svg
-            viewBox="0 0 1440 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-            className="w-full h-auto"
+          <h1
+            className="font-bold leading-[1.05] mb-6"
+            style={{
+              fontSize: "clamp(2.6rem, 6vw, 4.5rem)",
+              color: "#f5f0e8",
+              letterSpacing: "-0.03em",
+              maxWidth: "680px",
+            }}
           >
-            <path
-              d="M0 50L60 45C120 40 240 30 360 35C480 40 600 60 720 65C840 70 960 60 1080 45C1200 30 1320 20 1380 15L1440 10V100H1380C1320 100 1200 100 1080 100C960 100 840 100 720 100C600 100 480 100 360 100C240 100 120 100 60 100H0V50Z"
-              fill="white"
-            />
-          </svg>
+            Connecting farmers to
+            <br />
+            <span style={{ color: "#7aad5e" }}>global opportunities.</span>
+          </h1>
+          <p className="text-lg leading-relaxed" style={{ color: "#c8bfaa", maxWidth: "500px" }}>
+            {siteName} Ltd is a Kenyan agribusiness dedicated to producing and supplying
+            premium dried vegetables to local and international markets.
+          </p>
         </div>
       </section>
 
-      {/* Story Section — Two Column */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
+      {/* ── Story ── */}
+      <section className="py-24" style={{ background: "#f7f3ed" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
-            {/* Left — Image placeholder */}
+
+            {/* Image */}
             <div className="relative">
-              <div className="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden">
-                <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNkMWQ1ZGIiIGZpbGwtb3BhY2l0eT0iMC40Ij48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] bg-center flex items-center justify-center">
-                  <span className="text-gray-400 text-sm font-medium">Company Image</span>
-                </div>
+              <div
+                className="aspect-[4/5] rounded-2xl overflow-hidden"
+                style={{ background: "#e4ddd2" }}
+              >
+                <img
+                  src={getStrapiURL(ABOUT_HERO_IMAGE)}
+                  alt="AgroDakk operations"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-full h-full border-2 border-green-200 rounded-2xl -z-10"></div>
+              {/* Offset border decoration */}
+              <div
+                className="absolute -bottom-5 -right-5 w-full h-full rounded-2xl -z-10"
+                style={{ border: "2px solid #c8dbb8" }}
+              />
             </div>
 
-            {/* Right — Text */}
+            {/* Text */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Rooted in Nature,<br />
-                Committed to You
+              <div className="flex items-center gap-3 mb-6">
+                <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+                <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6741" }}>
+                  Our Story
+                </span>
+              </div>
+              <h2
+                className="text-3xl md:text-4xl font-bold leading-tight mb-8"
+                style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
+              >
+                Rooted in Nature,
+                <br />
+                <span style={{ color: "#3d5c35" }}>Committed to You.</span>
               </h2>
-              <div className="space-y-4 text-gray-600 leading-relaxed">
+              <div className="space-y-4 text-base leading-relaxed" style={{ color: "#5a5347" }}>
                 <p>
                   Based in Kitale, Kenya — the heart of the country's agricultural region — we work
                   closely with smallholder farmers to source the finest dried vegetables. Our supply
@@ -141,79 +165,130 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Stats — Clean Cards */}
-      <section className="py-16 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-200">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center px-6 py-4 first:pl-0 last:pr-0">
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+      {/* ── Stats ── */}
+      <section style={{ background: "#1e2a1a", borderTop: "1px solid rgba(122,173,94,0.1)", borderBottom: "1px solid rgba(122,173,94,0.1)" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-14">
+          <div className="grid grid-cols-2 md:grid-cols-4">
+            {stats.map((stat, i) => (
+              <div
+                key={stat.label}
+                className="flex flex-col items-center justify-center py-8 px-6 text-center"
+                style={{
+                  borderRight: i < stats.length - 1 ? "1px solid rgba(122,173,94,0.12)" : "none",
+                }}
+              >
+                <div
+                  className="text-4xl md:text-5xl font-bold tabular-nums leading-none mb-2"
+                  style={{ color: "#7aad5e", letterSpacing: "-0.03em" }}
+                >
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-500 font-medium">{stat.label}</div>
+                <span className="block w-1 h-1 rounded-full my-2" style={{ background: "#7aad5e" }} />
+                <div className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#6a7d62" }}>
+                  {stat.label}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Values — Grid */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-green-700 uppercase tracking-[0.2em] mb-3">
-              What Drives Us
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+      {/* ── Values ── */}
+      <section className="py-24" style={{ background: "#f7f3ed" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6741" }}>
+                What Drives Us
+              </span>
+            </div>
+            <h2
+              className="text-3xl md:text-4xl font-bold"
+              style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
+            >
               Our Values
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-px" style={{ background: "#e4ddd2" }}>
             {values.map((value, i) => (
               <div
                 key={i}
-                className="group p-8 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all duration-300"
+                className="p-10"
+                style={{ background: "#f7f3ed" }}
               >
-                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-5 group-hover:bg-green-200 transition-colors">
-                  <span className="text-green-700 font-bold text-lg">{i + 1}</span>
+                <div
+                  className="w-9 h-9 rounded-lg flex items-center justify-center mb-6 text-sm font-bold"
+                  style={{ background: "rgba(61,92,53,0.08)", color: "#3d5c35" }}
+                >
+                  0{i + 1}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-500 leading-relaxed">{value.description}</p>
+                <h3
+                  className="text-lg font-semibold mb-3"
+                  style={{ color: "#1e2a1a" }}
+                >
+                  {value.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#6b6355" }}>
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline — Journey */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-green-700 uppercase tracking-[0.2em] mb-3">
-              Our Journey
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+      {/* ── Timeline ── */}
+      <section className="py-24" style={{ background: "#ffffff" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div className="mb-14">
+            <div className="flex items-center gap-3 mb-5">
+              <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#4a6741" }}>
+                Our Journey
+              </span>
+            </div>
+            <h2
+              className="text-3xl md:text-4xl font-bold"
+              style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
+            >
               From Farm to Global Markets
             </h2>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl">
             {timeline.map((item, i) => (
-              <div key={i} className="relative flex gap-8 pb-12 last:pb-0">
+              <div key={i} className="relative flex gap-10 pb-12 last:pb-0">
+                {/* Vertical line */}
                 {i < timeline.length - 1 && (
-                  <div className="absolute left-[27px] top-12 bottom-0 w-px bg-gray-200"></div>
+                  <div
+                    className="absolute left-[22px] top-12 bottom-0 w-px"
+                    style={{ background: "#e4ddd2" }}
+                  />
                 )}
 
-                <div className="relative flex-shrink-0">
-                  <div className="w-14 h-14 rounded-full bg-white border-2 border-green-200 flex items-center justify-center z-10 relative">
-                    <span className="text-xs font-bold text-green-700">{item.year}</span>
+                {/* Year badge */}
+                <div className="flex-shrink-0 flex flex-col items-center">
+                  <div
+                    className="w-11 h-11 rounded-full flex items-center justify-center z-10 relative text-[11px] font-bold"
+                    style={{
+                      background: i === timeline.length - 1 ? "#3d5c35" : "#f7f3ed",
+                      border: `2px solid ${i === timeline.length - 1 ? "#3d5c35" : "#c8dbb8"}`,
+                      color: i === timeline.length - 1 ? "#ffffff" : "#3d5c35",
+                    }}
+                  >
+                    {item.year}
                   </div>
                 </div>
 
-                <div className="pt-3">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed">{item.desc}</p>
+                <div className="pt-2 pb-2">
+                  <h3 className="text-base font-semibold mb-1" style={{ color: "#1e2a1a" }}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#6b6355" }}>
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}
@@ -221,44 +296,69 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <blockquote className="text-2xl md:text-3xl font-medium text-gray-900 leading-relaxed mb-8">
+      {/* ── Mission Quote ── */}
+      <section className="py-24" style={{ background: "#1e2a1a" }}>
+        <div className="max-w-4xl mx-auto px-5 lg:px-8">
+          <div className="flex items-center gap-3 mb-10 justify-center">
+            <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+            <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: "#7aad5e" }}>
+              Our Mission
+            </span>
+            <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+          </div>
+          <blockquote
+            className="text-xl md:text-2xl font-medium leading-relaxed text-center"
+            style={{ color: "#e8f0e0" }}
+          >
             "To empower smallholder farmers through sustainable agriculture, value addition, and
             direct access to global markets — while delivering premium quality dried vegetables
             to customers worldwide."
           </blockquote>
-          <p className="text-gray-500">Our Mission</p>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Let's Work Together
-          </h2>
-          <p className="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you're a farmer looking to partner with us, or a buyer seeking premium dried
-            vegetables, we'd love to hear from you.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-green-500 transition-colors"
-            >
-              Get In Touch
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 border border-gray-600 text-gray-300 px-8 py-3.5 rounded-lg font-semibold hover:border-gray-400 hover:text-white transition-colors"
-            >
-              Browse Products
-            </Link>
+      {/* ── CTA ── */}
+      <section className="py-20" style={{ background: "#f7f3ed" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8">
+          <div
+            className="rounded-2xl px-10 py-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+            style={{ background: "#ffffff", border: "1px solid #e4ddd2" }}
+          >
+            <div>
+              <h2
+                className="text-2xl md:text-3xl font-bold mb-3"
+                style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
+              >
+                Let's Work Together
+              </h2>
+              <p className="text-sm leading-relaxed" style={{ color: "#6b6355", maxWidth: "420px" }}>
+                Whether you're a farmer looking to partner with us, or a buyer seeking premium dried
+                vegetables, we'd love to hear from you.
+              </p>
+            </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors text-white"
+                style={{ background: "#3d5c35" }}
+              >
+                Get In Touch
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link
+                href="/products"
+                className="inline-flex items-center text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors"
+                style={{ border: "1.5px solid #b0c9a0", color: "#3d5c35" }}
+              >
+                Browse Products
+              </Link>
+            </div>
           </div>
         </div>
       </section>
+
     </main>
   );
 }

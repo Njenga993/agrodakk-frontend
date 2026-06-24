@@ -1,3 +1,5 @@
+"use client";
+
 const facts = [
   {
     number: "01",
@@ -21,51 +23,80 @@ const facts = [
 
 export default function DidYouKnow() {
   return (
-    <section className="py-20 bg-gray-900 relative overflow-hidden">
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(#fff 1px, transparent 1px),
-                            linear-gradient(90deg, #fff 1px, transparent 1px)`,
-          backgroundSize: "60px 60px",
-        }}
-      ></div>
+    <section
+      className="py-24 overflow-hidden"
+      style={{ background: "#1e2a1a" }}
+    >
+      <div className="max-w-7xl mx-auto px-5 lg:px-8">
 
-      <div className="relative max-w-7xl mx-auto px-4">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-green-400 uppercase tracking-[0.2em] mb-3">
-            Did You Know
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-white">
+        {/* Header */}
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+            <span
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "#7aad5e" }}
+            >
+              Did You Know
+            </span>
+          </div>
+          <h2
+            className="text-3xl md:text-4xl font-bold leading-tight"
+            style={{ color: "#f0ebe0", letterSpacing: "-0.02em" }}
+          >
             Facts about AgroDakk
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {facts.map((fact) => (
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-px" style={{ background: "rgba(122,173,94,0.1)" }}>
+          {facts.map((fact, i) => (
             <div
               key={fact.number}
-              className="group relative p-8 rounded-2xl border border-gray-800 bg-gray-800/30 hover:bg-gray-800/50 hover:border-gray-700 transition-all duration-300 hover:-translate-y-1"
+              className="group relative flex flex-col p-10 transition-colors duration-300"
+              style={{ background: "#1e2a1a" }}
+              onMouseEnter={(e) =>
+                ((e.currentTarget as HTMLDivElement).style.background = "#243020")
+              }
+              onMouseLeave={(e) =>
+                ((e.currentTarget as HTMLDivElement).style.background = "#1e2a1a")
+              }
             >
-              {/* Number */}
-              <span className="block text-5xl font-bold text-gray-700 group-hover:text-green-700/30 transition-colors mb-6">
+              {/* Large ghost number */}
+              <div
+                className="text-[5rem] font-bold leading-none mb-8 transition-colors duration-300 select-none"
+                style={{ color: "rgba(122,173,94,0.12)", fontVariantNumeric: "tabular-nums" }}
+              >
                 {fact.number}
-              </span>
+              </div>
+
+              {/* Thin top rule — accent on hover */}
+              <div
+                className="absolute top-0 left-10 right-10 h-px transition-colors duration-300"
+                style={{
+                  background: i === 0
+                    ? "#7aad5e"
+                    : "rgba(122,173,94,0.2)",
+                }}
+              />
 
               {/* Content */}
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3
+                className="text-lg font-semibold mb-3"
+                style={{ color: "#e8f0e0" }}
+              >
                 {fact.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <p
+                className="text-sm leading-relaxed"
+                style={{ color: "#7a8f72" }}
+              >
                 {fact.description}
               </p>
-
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-8 right-8 h-px bg-gray-700 group-hover:bg-green-700/50 transition-colors"></div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

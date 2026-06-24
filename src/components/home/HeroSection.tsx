@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
@@ -5,71 +7,125 @@ const HERO_IMAGE = "/uploads/TK_16834_0dfd79ced1.jpg";
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-green-900 via-green-800 to-green-700 text-white overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0">
-        <img
-          src={getStrapiURL(HERO_IMAGE)}
-          alt="AgroDakk farm and vegetables"
-          className="w-full h-full object-cover"
-        />
-        {/* Dark gradient overlay on top of image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-900/85 via-green-800/75 to-green-700/70"></div>
-      </div>
-      
-      {/* Subtle Dot Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.04]" style={{
-        backgroundImage: `radial-gradient(circle at 25% 25%, white 1px, transparent 1px),
-                          radial-gradient(circle at 75% 75%, white 1px, transparent 1px)`,
-        backgroundSize: '60px 60px'
-      }}></div>
-      
+    <section
+      className="relative overflow-hidden"
+      style={{ minHeight: "92vh", background: "#0e1a0c" }}
+    >
+      {/* Background image */}
+      <img
+        src={getStrapiURL(HERO_IMAGE)}
+        alt="AgroDakk farm and vegetables"
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ objectPosition: "60% center", opacity: 0.45 }}
+      />
+
+      {/* Left-side vignette */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(to right, rgba(14,26,12,0.92) 0%, rgba(14,26,12,0.65) 50%, rgba(14,26,12,0.15) 100%)",
+        }}
+      />
+
+      {/* Bottom fade into page */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32"
+        style={{ background: "linear-gradient(to bottom, transparent, #f7f3ed)" }}
+      />
+
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 pt-24 md:pt-36 pb-24 md:pb-32">
-        <span className="inline-block bg-green-600/40 backdrop-blur-sm text-green-100 text-sm font-medium px-4 py-2 rounded-full mb-6 border border-green-500/30">
-           From Farm to Global Markets
-        </span>
-        
-        <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
-          Rooted in Nature,<br />
-          <span className="text-green-200">Committed to You</span>
-        </h1>
-        
-        <p className="text-xl text-green-100 mb-8 max-w-2xl leading-relaxed">
-          Premium dried vegetables sourced directly from Kenyan smallholder farmers. 
-          Delivering quality, sustainability, and nutrition to local and international markets.
-        </p>
-        
-        <div className="flex gap-4 flex-wrap">
-          <Link
-            href="/products"
-            className="bg-white text-green-900 px-8 py-4 rounded-full font-semibold hover:bg-green-50 transition shadow-lg hover:shadow-xl hover:-translate-y-0.5 transform"
+      <div
+        className="relative max-w-7xl mx-auto px-5 flex flex-col justify-center"
+        style={{ minHeight: "92vh" }}
+      >
+        <div className="max-w-2xl py-28">
+
+          {/* Eyebrow */}
+          <div className="flex items-center gap-3 mb-8">
+            <span className="block w-8 h-px" style={{ background: "#7aad5e" }} />
+            <span
+              className="text-xs font-semibold uppercase tracking-widest"
+              style={{ color: "#a8cc8c" }}
+            >
+              From Farm to Global Markets
+            </span>
+          </div>
+
+          {/* Heading */}
+          <h1
+            className="font-bold leading-[1.05] mb-6"
+            style={{
+              fontSize: "clamp(2.8rem, 6vw, 5rem)",
+              color: "#f5f0e8",
+              letterSpacing: "-0.03em",
+            }}
           >
-            Explore Our Products
-          </Link>
-          <Link
-            href="/about"
-            className="border-2 border-white/60 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 hover:border-white transition"
+            Premium produce.
+            <br />
+            <span style={{ color: "#7aad5e" }}>Kenyan roots.</span>
+          </h1>
+
+          {/* Body */}
+          <p
+            className="text-lg leading-relaxed mb-10"
+            style={{ color: "#c8bfaa", maxWidth: "520px" }}
           >
-            Our Story
-          </Link>
+            Dried vegetables and agricultural products sourced directly from smallholder
+            farmers in Kitale — delivering quality, sustainability, and nutrition to
+            local and international markets.
+          </p>
+
+          {/* CTAs */}
+          <div className="flex gap-4 flex-wrap items-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors"
+              style={{
+                background: "#7aad5e",
+                color: "#0e1a0c",
+                letterSpacing: "0.02em",
+              }}
+            >
+              Explore Products
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+
+            <Link
+              href="/about"
+              className="inline-flex items-center text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors"
+              style={{
+                color: "#e8e0d0",
+                border: "1.5px solid rgba(255,255,255,0.2)",
+              }}
+            >
+              Our Story
+            </Link>
+          </div>
+
+          {/* Trust strip */}
+          <div
+            className="flex gap-8 mt-16 pt-8 flex-wrap"
+            style={{ borderTop: "1px solid rgba(255,255,255,0.1)" }}
+          >
+            {[
+              { value: "500+", label: "Farmers partnered" },
+              { value: "12+", label: "Product lines" },
+              { value: "Kenya", label: "Kitale sourced" },
+            ].map((item) => (
+              <div key={item.label}>
+                <div className="text-xl font-bold" style={{ color: "#7aad5e" }}>
+                  {item.value}
+                </div>
+                <div className="text-xs mt-0.5" style={{ color: "#8a7d6e" }}>
+                  {item.label}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      
-      {/* 🌊 Wave Divider at Bottom */}
-      <div className="absolute bottom-0 left-0 right-0 translate-y-px">
-        <svg 
-          viewBox="0 0 1440 120" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          className="w-full h-auto"
-        >
-          <path 
-            d="M0 60L60 55C120 50 240 40 360 45C480 50 600 70 720 75C840 80 960 70 1080 55C1200 40 1320 20 1380 10L1440 0V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0V60Z" 
-            fill="white"
-          />
-        </svg>
       </div>
     </section>
   );
