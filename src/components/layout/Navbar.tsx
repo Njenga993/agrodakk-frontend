@@ -33,7 +33,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-5">
 
         {/* ── Desktop layout ── */}
-        <div className="hidden md:flex items-center justify-between h-[72px]">
+        <div className="hidden md:flex items-center justify-between h-[100px]">
 
           {/* Logo */}
           <Link href="/" className="flex-shrink-0 flex items-center">
@@ -154,7 +154,7 @@ export default function Navbar() {
             <Link
               href="/"
               className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
-              style={{ height: "80px" }}
+              style={{ height: "100px" }}
             >
               <img
                 src={LOGO_URL}

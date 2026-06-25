@@ -2,7 +2,7 @@
 
 import { useCart } from "@/context/CartContext";
 
-const WHATSAPP_NUMBER = "+254 797 905785"; // +1 (415) 622-6020
+const WHATSAPP_NUMBER = "254 797 905785"; // +1 (415) 622-6020
 
 export default function CartSlideOver() {
   const { items, isOpen, closeCart, removeItem, updateQuantity, totalPrice, clearCart } = useCart();

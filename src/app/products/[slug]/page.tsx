@@ -4,6 +4,8 @@ import { getProduct } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 import AddToCartSection from "@/components/cart/AddToCartSection";
 
+const HIDDEN_PRICE_CATEGORIES = ["chillies", "chilli", "chili", "chilies"];
+
 export default async function ProductDetailPage({
   params,
 }: {
@@ -14,16 +16,20 @@ export default async function ProductDetailPage({
   const res = await getProduct(slug).catch(() => ({ data: [] }));
   const product = res.data?.[0];
 
-  if (!product) {
-    notFound();
-  }
+  if (!product) notFound();
 
   const price = product.price ?? 500;
   const originalPrice = price * 1.2;
 
+  const categorySlug = product.product_category?.slug?.toLowerCase() ?? "";
+  const categoryName = product.product_category?.name?.toLowerCase() ?? "";
+  const hidePrice = HIDDEN_PRICE_CATEGORIES.some(
+    (c) => categorySlug.includes(c) || categoryName.includes(c)
+  );
+
   return (
     <main style={{ background: "#f7f3ed" }}>
-      
+
       {/* ── Breadcrumb ── */}
       <div className="border-b" style={{ borderColor: "#e4ddd2" }}>
         <div className="max-w-7xl mx-auto px-5 lg:px-8 py-3.5">
@@ -40,12 +46,11 @@ export default async function ProductDetailPage({
       {/* ── Main Product Layout ── */}
       <div className="max-w-7xl mx-auto px-5 lg:px-8 py-12 md:py-20">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
-          
-          {/* Left - Images */}
+
+          {/* Left — Images */}
           <div>
-            {/* Main Image */}
-            <div 
-              className="aspect-square rounded-2xl overflow-hidden" 
+            <div
+              className="aspect-square rounded-2xl overflow-hidden"
               style={{ background: "#faf8f5", border: "1px solid #e4ddd2" }}
             >
               {product.images?.[0] ? (
@@ -63,17 +68,16 @@ export default async function ProductDetailPage({
               )}
             </div>
 
-            {/* Thumbnail Gallery */}
             {product.images?.length > 1 && (
               <div className="flex gap-3 mt-4">
                 {product.images.map((img: any, i: number) => (
                   <div
                     key={i}
-                    className="w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden cursor-pointer transition-all duration-200"
-                    style={{ 
-                      background: "#faf8f5", 
-                      border: "2px solid", 
-                      borderColor: i === 0 ? "#3d5c35" : "#e4ddd2" 
+                    className="w-20 h-20 flex-shrink-0 rounded-xl overflow-hidden cursor-pointer"
+                    style={{
+                      background: "#faf8f5",
+                      border: "2px solid",
+                      borderColor: i === 0 ? "#3d5c35" : "#e4ddd2",
                     }}
                   >
                     <img
@@ -87,9 +91,10 @@ export default async function ProductDetailPage({
             )}
           </div>
 
-          {/* Right - Product Details */}
+          {/* Right — Product Details */}
           <div className="flex flex-col">
-            {/* Category & Status Badges */}
+
+            {/* Badges */}
             <div className="flex items-center gap-2.5 mb-5 flex-wrap">
               {product.product_category && (
                 <span
@@ -109,7 +114,7 @@ export default async function ProductDetailPage({
               ) : (
                 <span
                   className="text-[10px] font-semibold px-3 py-1 rounded-full"
-                  style={{ color: "#b91c1c", background: "rgba(185, 28, 28, 0.06)", border: "1px solid #fecaca" }}
+                  style={{ color: "#b91c1c", background: "rgba(185,28,28,0.06)", border: "1px solid #fecaca" }}
                 >
                   Out of Stock
                 </span>
@@ -124,7 +129,7 @@ export default async function ProductDetailPage({
               )}
             </div>
 
-            {/* Product Name */}
+            {/* Name */}
             <h1
               className="text-3xl md:text-4xl font-bold leading-tight mb-4"
               style={{ color: "#1e2a1a", letterSpacing: "-0.02em" }}
@@ -144,25 +149,46 @@ export default async function ProductDetailPage({
               <span className="text-xs" style={{ color: "#a89d8e" }}>4.5 (24 reviews)</span>
             </div>
 
-            {/* Price Block */}
+            {/* Price block — hidden for chillies */}
             <div className="mb-6 pb-6" style={{ borderBottom: "1px solid #f0ebe0" }}>
-              <div className="flex items-baseline gap-3">
-                <span className="text-3xl font-bold" style={{ color: "#3d5c35" }}>
-                  KES {price.toLocaleString()}
-                </span>
-                <span className="text-base line-through" style={{ color: "#a89d8e" }}>
-                  KES {originalPrice.toLocaleString()}
-                </span>
-                <span
-                  className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
-                  style={{ color: "#b91c1c", background: "rgba(185, 28, 28, 0.08)" }}
+              {hidePrice ? (
+                <div
+                  className="rounded-xl px-5 py-4 flex items-start gap-4"
+                  style={{ background: "#f0ebe0", border: "1px solid #e4ddd2" }}
                 >
-                  Save 20%
-                </span>
-              </div>
-              <p className="text-xs mt-2" style={{ color: "#a89d8e" }}>
-                Price per 50g pack • Bulk discounts available
-              </p>
+                  <svg className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: "#7aad5e" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+                  </svg>
+                  <div>
+                    <p className="text-sm font-semibold" style={{ color: "#1e2a1a" }}>
+                      Price available on request
+                    </p>
+                    <p className="text-xs mt-1" style={{ color: "#6b6355" }}>
+                      Pricing for this product varies based on quantity and season. Contact us for a quote.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-3xl font-bold" style={{ color: "#3d5c35" }}>
+                      KES {price.toLocaleString()}
+                    </span>
+                    <span className="text-base line-through" style={{ color: "#a89d8e" }}>
+                      KES {originalPrice.toLocaleString()}
+                    </span>
+                    <span
+                      className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full"
+                      style={{ color: "#b91c1c", background: "rgba(185,28,28,0.08)" }}
+                    >
+                      Save 20%
+                    </span>
+                  </div>
+                  <p className="text-xs mt-2" style={{ color: "#a89d8e" }}>
+                    Price per 50g pack • Bulk discounts available
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Short Description */}
@@ -194,20 +220,42 @@ export default async function ProductDetailPage({
               </ul>
             </div>
 
-            {/* Quantity & Add to Cart */}
+            {/* Add to Cart or Contact CTA */}
             <div className="mt-auto">
-              <AddToCartSection
-                product={{
-                  documentId: product.documentId,
-                  name: product.name,
-                  slug: product.slug,
-                  price: product.price ?? 500,
-                  image: product.images?.[0]
-                    ? getStrapiURL(product.images[0].url)
-                    : undefined,
-                  category: product.product_category?.name,
-                }}
-              />
+              {hidePrice ? (
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <Link
+                    href="/contact"
+                    className="flex-1 inline-flex items-center justify-center gap-2 text-white text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors"
+                    style={{ background: "#3d5c35" }}
+                  >
+                    Request a Quote
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="flex-1 inline-flex items-center justify-center text-sm font-semibold px-7 py-3.5 rounded-lg transition-colors"
+                    style={{ border: "1.5px solid #b0c9a0", color: "#3d5c35" }}
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+              ) : (
+                <AddToCartSection
+                  product={{
+                    documentId: product.documentId,
+                    name: product.name,
+                    slug: product.slug,
+                    price: product.price ?? 500,
+                    image: product.images?.[0]
+                      ? getStrapiURL(product.images[0].url)
+                      : undefined,
+                    category: product.product_category?.name,
+                  }}
+                />
+              )}
             </div>
 
             {/* Meta Info */}
@@ -236,11 +284,10 @@ export default async function ProductDetailPage({
         </div>
       </div>
 
-      {/* ── Full Description Section ── */}
+      {/* ── Full Description ── */}
       {product.description && (
         <section className="pb-16 md:pb-24" style={{ background: "#f7f3ed" }}>
           <div className="max-w-4xl mx-auto px-5 lg:px-8">
-            {/* Paper Card */}
             <div
               className="rounded-2xl p-8 md:p-12 lg:p-16"
               style={{ background: "#ffffff", border: "1px solid #e4ddd2" }}
@@ -253,7 +300,6 @@ export default async function ProductDetailPage({
               </div>
 
               <div className="prose prose-lg max-w-none leading-relaxed" style={{ color: "#5a5347" }}>
-                {/* Custom styles matching blog detail page */}
                 <style>{`
                   .prose h2 { color: #1e2a1a !important; letter-spacing: -0.02em; margin-top: 2.5em; margin-bottom: 1em; font-weight: 700; }
                   .prose h3 { color: #1e2a1a !important; margin-top: 2em; margin-bottom: 0.8em; font-weight: 600; }
@@ -273,11 +319,7 @@ export default async function ProductDetailPage({
                     font-style: italic;
                     color: #6b6355 !important;
                   }
-                  .prose img {
-                    border-radius: 1rem;
-                    border: 1px solid #e4ddd2;
-                    margin: 2.5em 0;
-                  }
+                  .prose img { border-radius: 1rem; border: 1px solid #e4ddd2; margin: 2.5em 0; }
                 `}</style>
 
                 {Array.isArray(product.description) ? (
@@ -306,15 +348,8 @@ export default async function ProductDetailPage({
       <div className="pb-16 md:pb-24 flex justify-center" style={{ background: "#f7f3ed" }}>
         <Link
           href="/products"
-          className="
-            group inline-flex items-center gap-2.5 text-sm font-semibold 
-            px-6 py-3 rounded-full transition-all duration-200 hover:shadow-sm
-          "
-          style={{ 
-            background: "#ffffff", 
-            color: "#3d5c35", 
-            border: "1px solid #e4ddd2" 
-          }}
+          className="group inline-flex items-center gap-2.5 text-sm font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-sm"
+          style={{ background: "#ffffff", color: "#3d5c35", border: "1px solid #e4ddd2" }}
         >
           <svg
             className="w-4 h-4 transition-transform duration-200 group-hover:-translate-x-0.5"
@@ -331,6 +366,7 @@ export default async function ProductDetailPage({
           Back to All Products
         </Link>
       </div>
+
     </main>
   );
 }

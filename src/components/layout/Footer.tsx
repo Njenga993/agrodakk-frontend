@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
-// Use getStrapiURL with the path — returns http://localhost:1337/uploads/logo_all_f2a38cd5c8.jpeg
 const LOGO_URL = getStrapiURL("/uploads/logo_all_f2a38cd5c8.jpeg");
 
 const quickLinks = [
@@ -61,38 +60,43 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 pt-20 pb-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Brand — 4 columns */}
+    <footer style={{ background: "#0e1a0c" }}>
+
+      {/* ── Top accent line ── */}
+      <div className="h-px w-full" style={{ background: "rgba(122,173,94,0.2)" }} />
+
+      {/* ── Main body ── */}
+      <div className="max-w-7xl mx-auto px-5 lg:px-8 pt-20 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
+
+          {/* Brand — 4 cols */}
           <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center gap-3 mb-5">
-              {/* Logo */}
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+            {/* Logo only — no text */}
+            <Link href="/" className="inline-block mb-6">
+              <div className="w-20 h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-sm">
                 <img
                   src={LOGO_URL}
                   alt="AgroDakk Foods"
-                  className="w-full h-full object-contain p-1"
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <span className="text-xl font-bold text-white tracking-tight">AgroDakk</span>
-                <span className="block text-[11px] text-green-400 font-medium tracking-wide">
-                  Foods Ltd
-                </span>
-              </div>
             </Link>
-            <p className="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+
+            <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "#6a7d62" }}>
               Premium dried vegetables sourced directly from Kenyan smallholder farmers.
               From farm to global markets — quality you can trust.
             </p>
-            <p className="text-gray-600 text-xs font-medium tracking-wide">
+
+            {/* Tagline */}
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-7"
+              style={{ color: "#3d5c35" }}
+            >
               Rooted in Nature, Committed to You
             </p>
 
-            {/* Social Links */}
-            <div className="flex gap-2 mt-6">
+            {/* Socials */}
+            <div className="flex gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
@@ -100,7 +104,12 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-green-700 hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  style={{
+                    background: "rgba(122,173,94,0.08)",
+                    color: "#6a7d62",
+                    border: "1px solid rgba(122,173,94,0.12)",
+                  }}
                 >
                   {social.icon}
                 </a>
@@ -108,17 +117,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links — 2 columns */}
+          {/* Quick Links — 2 cols */}
           <div className="lg:col-span-2">
-            <h4 className="text-white text-sm font-semibold mb-5 uppercase tracking-wider">
+            <h4
+              className="text-xs font-semibold uppercase tracking-widest mb-6"
+              style={{ color: "#7aad5e" }}
+            >
               Quick Links
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: "#6a7d62" }}
                   >
                     {link.label}
                   </Link>
@@ -127,17 +140,21 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Products — 3 columns */}
+          {/* Products — 3 cols */}
           <div className="lg:col-span-3">
-            <h4 className="text-white text-sm font-semibold mb-5 uppercase tracking-wider">
+            <h4
+              className="text-xs font-semibold uppercase tracking-widest mb-6"
+              style={{ color: "#7aad5e" }}
+            >
               Our Products
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3.5">
               {products.map((product) => (
                 <li key={product}>
                   <Link
                     href="/products"
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                    className="text-sm transition-colors duration-200"
+                    style={{ color: "#6a7d62" }}
                   >
                     {product}
                   </Link>
@@ -146,64 +163,100 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact — 3 columns */}
+          {/* Contact — 3 cols */}
           <div className="lg:col-span-3">
-            <h4 className="text-white text-sm font-semibold mb-5 uppercase tracking-wider">
+            <h4
+              className="text-xs font-semibold uppercase tracking-widest mb-6"
+              style={{ color: "#7aad5e" }}
+            >
               Contact
             </h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                <span className="text-gray-400 text-sm">Kitale, Kenya</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a
-                  href="mailto:info@agrodakk.com"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  info@agrodakk.com
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="text-gray-400 text-sm">Local & International Markets</span>
-              </li>
+            <ul className="space-y-5">
+              {[
+                {
+                  icon: (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  ),
+                  content: <span>Kitale, Kenya</span>,
+                },
+                {
+                  icon: (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  ),
+                  content: (
+                    <a href="mailto:info@agrodakk.com" style={{ color: "#6a7d62" }}>
+                      info@agrodakk.com
+                    </a>
+                  ),
+                },
+                {
+                  icon: (
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  ),
+                  content: <span>Local & International Markets</span>,
+                },
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex-shrink-0" style={{ color: "#3d5c35" }}>
+                    {item.icon}
+                  </span>
+                  <span className="text-sm" style={{ color: "#6a7d62" }}>
+                    {item.content}
+                  </span>
+                </li>
+              ))}
             </ul>
 
-            {/* Business Hours */}
-            <div className="mt-6 pt-6 border-t border-gray-800">
-              <p className="text-xs text-gray-500 mb-2">Business Hours</p>
-              <p className="text-xs text-gray-400">Mon — Fri: 8:00 AM — 5:00 PM</p>
-              <p className="text-xs text-gray-400">Sat: 9:00 AM — 1:00 PM</p>
+            {/* Hours */}
+            <div
+              className="mt-7 pt-6"
+              style={{ borderTop: "1px solid rgba(122,173,94,0.1)" }}
+            >
+              <p
+                className="text-[10px] font-semibold uppercase tracking-widest mb-3"
+                style={{ color: "#3d5c35" }}
+              >
+                Business Hours
+              </p>
+              <p className="text-xs mb-1" style={{ color: "#56644e" }}>Mon — Fri: 8:00 AM — 5:00 PM</p>
+              <p className="text-xs" style={{ color: "#56644e" }}>Sat: 9:00 AM — 1:00 PM</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-gray-500 text-xs">
+      {/* ── Bottom bar ── */}
+      <div style={{ borderTop: "1px solid rgba(122,173,94,0.08)" }}>
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs" style={{ color: "#3d5035" }}>
             &copy; {new Date().getFullYear()} AgroDakk Foods Ltd. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs">
-            <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-gray-500 hover:text-gray-300 transition-colors">
-              Terms of Service
-            </a>
+          <div className="flex items-center gap-6 text-xs" style={{ color: "#3d5035" }}>
+            <a href="#" className="transition-colors hover:text-[#7aad5e]">Privacy Policy</a>
+            <a href="#" className="transition-colors hover:text-[#7aad5e]">Terms of Service</a>
           </div>
         </div>
+        {/* Kspace credit */}
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 pb-4 flex justify-center">
+          <a
+            href="https://njenga993.github.io/kspace/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[10px] transition-colors hover:text-[#7aad5e]"
+            style={{ color: "#2a3d25", letterSpacing: "0.08em" }}
+          >
+            Designed & Built by <span className="font-semibold" style={{ color: "#3d5c35" }}>Kspace</span>
+          </a>
+        </div>
       </div>
+
     </footer>
   );
 }
