@@ -1,7 +1,7 @@
 import { getSiteSettings } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 
-const CONTACT_HERO_IMAGE = "/uploads/TK_16834_0dfd79ced1.jpg";
+const CONTACT_HERO_IMAGE = "/uploads/image_199c3b1658.png";
 
 export default async function ContactPage() {
   let settings = null;

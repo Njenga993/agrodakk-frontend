@@ -40,7 +40,7 @@ export default function Navbar() {
             <img
               src={LOGO_URL}
               alt="AgroDakk Foods"
-              className="h-14 w-auto object-contain"
+              className="h-40 w-auto object-contain"
             />
           </Link>
 
@@ -159,7 +159,7 @@ export default function Navbar() {
               <img
                 src={LOGO_URL}
                 alt="AgroDakk Foods"
-                className="h-full w-auto object-contain"
+                className="h-40 w-auto object-contain"
               />
             </Link>
 

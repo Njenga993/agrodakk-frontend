@@ -1,14 +1,18 @@
+
+'use client'
+
 import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
-const LOGO_URL = getStrapiURL("/uploads/logo_all_f2a38cd5c8.jpeg");
+const LOGO_URL     = getStrapiURL("/uploads/logo_all_f2a38cd5c8.jpeg");
+const CHILLI_IMAGE = "/red_b0a3b17445.jpg"; // swap with your actual filename under /public
 
 const quickLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/products", label: "Products" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/",         label: "Home"      },
+  { href: "/about",    label: "About Us"  },
+  { href: "/products", label: "Products"  },
+  { href: "/blog",     label: "Blog"      },
+  { href: "/contact",  label: "Contact"   },
 ];
 
 const products = [
@@ -60,20 +64,85 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#0e1a0c" }}>
+    <footer className="relative overflow-hidden" style={{ background: "#0b1509" }}>
 
-      {/* ── Top accent line ── */}
-      <div className="h-px w-full" style={{ background: "rgba(122,173,94,0.2)" }} />
+      {/* ── Chilli background image — full bleed, very low opacity ── */}
+      <img
+        src={CHILLI_IMAGE}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+        style={{ objectPosition: "center 40%", opacity: 0.7 }}
+      />
+
+      {/* ── Dark overlay to keep text readable ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: "rgba(11,21,9,0.82)" }}
+      />
+
+      {/* ── Top dual-tone accent bar ── */}
+      <div className="relative flex" style={{ height: "3px" }}>
+        <div className="flex-1" style={{ background: "rgba(122,173,94,0.55)" }} />
+        <div className="flex-1" style={{ background: "rgba(185,85,40,0.55)" }} />
+      </div>
+
+      {/* ── Product identity strip ── */}
+      <div
+        className="relative"
+        style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}
+      >
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex items-center justify-center gap-10 flex-wrap">
+          <div className="flex items-center gap-2.5">
+            <span
+              className="block w-1.5 h-1.5 rounded-full"
+              style={{ background: "#7aad5e" }}
+            />
+            <span
+              className="font-semibold uppercase tracking-widest"
+              style={{ fontSize: "9px", color: "#7aad5e" }}
+            >
+              Dried Vegetables
+            </span>
+          </div>
+          <span style={{ color: "rgba(255,255,255,0.12)", fontSize: "10px" }}>/</span>
+          <div className="flex items-center gap-2.5">
+            <span
+              className="block w-1.5 h-1.5 rounded-full"
+              style={{ background: "#c96b3a" }}
+            />
+            <span
+              className="font-semibold uppercase tracking-widest"
+              style={{ fontSize: "9px", color: "#c96b3a" }}
+            >
+              Dried Chilli
+            </span>
+          </div>
+          <span style={{ color: "rgba(255,255,255,0.12)", fontSize: "10px" }}>/</span>
+          <span
+            className="font-medium uppercase tracking-widest"
+            style={{ fontSize: "9px", color: "rgba(255,255,255,0.28)" }}
+          >
+            Kitale, Kenya &mdash; From Farm to Global Markets
+          </span>
+        </div>
+      </div>
 
       {/* ── Main body ── */}
-      <div className="max-w-7xl mx-auto px-5 lg:px-8 pt-20 pb-16">
+      <div className="relative max-w-7xl mx-auto px-5 lg:px-8 pt-20 pb-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
 
           {/* Brand — 4 cols */}
           <div className="lg:col-span-4">
-            {/* Logo only — no text */}
             <Link href="/" className="inline-block mb-6">
-              <div className="w-20 h-20 rounded-xl overflow-hidden bg-white flex items-center justify-center shadow-sm">
+              <div
+                className="flex items-center justify-center rounded-xl overflow-hidden"
+                style={{
+                  width      : "80px",
+                  height     : "80px",
+                  background : "rgba(255,255,255,0.96)",
+                }}
+              >
                 <img
                   src={LOGO_URL}
                   alt="AgroDakk Foods"
@@ -82,15 +151,18 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed mb-6 max-w-xs" style={{ color: "#6a7d62" }}>
-              Premium dried vegetables sourced directly from Kenyan smallholder farmers.
-              From farm to global markets — quality you can trust.
+            <p
+              className="text-sm leading-relaxed mb-5 max-w-xs"
+              style={{ color: "#6a7d62" }}
+            >
+              Premium dried vegetables and chilli products sourced directly
+              from Kenyan smallholder farmers. From farm to global markets
+              &mdash; quality you can trust.
             </p>
 
-            {/* Tagline */}
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-7"
-              style={{ color: "#3d5c35" }}
+              style={{ color: "#3d5c35", letterSpacing: "0.12em" }}
             >
               Rooted in Nature, Committed to You
             </p>
@@ -104,11 +176,13 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  className="flex items-center justify-center rounded-lg transition-colors duration-200"
                   style={{
-                    background: "rgba(122,173,94,0.08)",
-                    color: "#6a7d62",
-                    border: "1px solid rgba(122,173,94,0.12)",
+                    width      : "36px",
+                    height     : "36px",
+                    background : "rgba(122,173,94,0.07)",
+                    color      : "#6a7d62",
+                    border     : "1px solid rgba(122,173,94,0.14)",
                   }}
                 >
                   {social.icon}
@@ -121,7 +195,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h4
               className="text-xs font-semibold uppercase tracking-widest mb-6"
-              style={{ color: "#7aad5e" }}
+              style={{ color: "#7aad5e", letterSpacing: "0.12em" }}
             >
               Quick Links
             </h4>
@@ -144,13 +218,22 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4
               className="text-xs font-semibold uppercase tracking-widest mb-6"
-              style={{ color: "#7aad5e" }}
+              style={{ color: "#7aad5e", letterSpacing: "0.12em" }}
             >
               Our Products
             </h4>
             <ul className="space-y-3.5">
               {products.map((product) => (
-                <li key={product}>
+                <li key={product} className="flex items-center gap-2">
+                  {/* Dot colour hints at which category */}
+                  <span
+                    className="block w-1 h-1 rounded-full flex-shrink-0"
+                    style={{
+                      background: product.toLowerCase().includes("chill")
+                        ? "#c96b3a"
+                        : "#3d5c35",
+                    }}
+                  />
                   <Link
                     href="/products"
                     className="text-sm transition-colors duration-200"
@@ -167,7 +250,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4
               className="text-xs font-semibold uppercase tracking-widest mb-6"
-              style={{ color: "#7aad5e" }}
+              style={{ color: "#7aad5e", letterSpacing: "0.12em" }}
             >
               Contact
             </h4>
@@ -200,7 +283,7 @@ export default function Footer() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   ),
-                  content: <span>Local & International Markets</span>,
+                  content: <span>Local &amp; International Markets</span>,
                 },
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
@@ -220,39 +303,66 @@ export default function Footer() {
               style={{ borderTop: "1px solid rgba(122,173,94,0.1)" }}
             >
               <p
-                className="text-[10px] font-semibold uppercase tracking-widest mb-3"
-                style={{ color: "#3d5c35" }}
+                className="font-semibold uppercase tracking-widest mb-3"
+                style={{ fontSize: "10px", color: "#3d5c35", letterSpacing: "0.12em" }}
               >
                 Business Hours
               </p>
-              <p className="text-xs mb-1" style={{ color: "#56644e" }}>Mon — Fri: 8:00 AM — 5:00 PM</p>
-              <p className="text-xs" style={{ color: "#56644e" }}>Sat: 9:00 AM — 1:00 PM</p>
+              <p className="text-xs mb-1" style={{ color: "#56644e" }}>
+                Mon &mdash; Fri: 8:00 AM &mdash; 5:00 PM
+              </p>
+              <p className="text-xs" style={{ color: "#56644e" }}>
+                Sat: 9:00 AM &mdash; 1:00 PM
+              </p>
             </div>
           </div>
         </div>
       </div>
 
       {/* ── Bottom bar ── */}
-      <div style={{ borderTop: "1px solid rgba(122,173,94,0.08)" }}>
+      <div
+        className="relative"
+        style={{ borderTop: "1px solid rgba(122,173,94,0.08)" }}
+      >
         <div className="max-w-7xl mx-auto px-5 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs" style={{ color: "#3d5035" }}>
             &copy; {new Date().getFullYear()} AgroDakk Foods Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-xs" style={{ color: "#3d5035" }}>
-            <a href="#" className="transition-colors hover:text-[#7aad5e]">Privacy Policy</a>
-            <a href="#" className="transition-colors hover:text-[#7aad5e]">Terms of Service</a>
+            <a
+              href="#"
+              className="transition-colors"
+              style={{ color: "#3d5035" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#7aad5e")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#3d5035")}
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#"
+              className="transition-colors"
+              style={{ color: "#3d5035" }}
+              onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#7aad5e")}
+              onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#3d5035")}
+            >
+              Terms of Service
+            </a>
           </div>
         </div>
+
         {/* Kspace credit */}
-        <div className="max-w-7xl mx-auto px-5 lg:px-8 pb-4 flex justify-center">
+        <div className="max-w-7xl mx-auto px-5 lg:px-8 pb-5 flex justify-center">
           <a
             href="https://njenga993.github.io/kspace/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[10px] transition-colors hover:text-[#7aad5e]"
-            style={{ color: "#2a3d25", letterSpacing: "0.08em" }}
+            className="transition-colors"
+            style={{ fontSize: "10px", color: "#2a3d25", letterSpacing: "0.08em" }}
+            onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#7aad5e")}
+            onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#2a3d25")}
           >
-            Designed & Built by <span className="font-semibold" style={{ color: "#3d5c35" }}>Kspace</span>
+            Designed &amp; Built by{" "}
+            <span className="font-semibold" style={{ color: "#3d5c35" }}>Kspace</span>
           </a>
         </div>
       </div>

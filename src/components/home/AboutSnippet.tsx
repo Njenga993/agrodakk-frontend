@@ -9,9 +9,9 @@ interface AboutSnippetProps {
 }
 
 const images = [
-  { src: "/uploads/TK_16834_0dfd79ced1.jpg", alt: "Farmers harvesting vegetables" },
-  { src: "/uploads/Langat_a822855147.jpg", alt: "Dried vegetables processing" },
-  { src: "/uploads/tshirt3_9188b403ac.jpg", alt: "Packed products ready for export" },
+  { src: "/uploads/image_f93a3adfdf.png", alt: "Seedings of the vegetables" },
+  { src: "/uploads/TK_16872_0e61895da7.jpg", alt: "vegetables ready for processing" },
+  { src: "/uploads/Managu_right_90b0fbbca0.jpeg", alt: "Packed products ready for export" },
 ];
 
 const stats = [

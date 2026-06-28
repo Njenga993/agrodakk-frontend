@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getSiteSettings } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 
-const ABOUT_HERO_IMAGE = "/uploads/Langat_a822855147.jpg";
+const ABOUT_HERO_IMAGE = "/uploads/image_f93a3adfdf.png";
 
 const stats = [
   { value: "10+", label: "Years Experience" },

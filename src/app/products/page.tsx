@@ -3,7 +3,7 @@ import { getProducts, getCategories } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 
-const PRODUCTS_HERO_IMAGE = "/uploads/TK_16834_0dfd79ced1.jpg";
+const PRODUCTS_HERO_IMAGE = "/uploads/Managu_right_90b0fbbca0.jpeg";
 
 function StarRating({ rating = 4.5 }: { rating?: number }) {
   const fullStars = Math.floor(rating);
