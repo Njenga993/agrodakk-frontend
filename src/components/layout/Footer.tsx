@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
 const LOGO_URL     = getStrapiURL("/uploads/logo_all_f2a38cd5c8.jpeg");
-const CHILLI_IMAGE = "/red_b0a3b17445.jpg"; // swap with your actual filename under /public
+const CHILLI_IMAGE = "/flake_powder.png"; // swap with your actual filename under /public
 
 const quickLinks = [
   { href: "/",         label: "Home"      },
@@ -19,8 +19,8 @@ const products = [
   "Dried Managu",
   "Dried Saga",
   "Dried Kunde",
-  "Dried Red Chillies",
-  "Dried Green Chillies",
+  "Dried Red Chillies Flakes",
+  "Dried Red Chillies Powder",
 ];
 
 const socialLinks = [

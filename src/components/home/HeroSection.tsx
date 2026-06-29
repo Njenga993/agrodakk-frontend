@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
-const VEGETABLE_IMAGE = "/uploads/image_f93a3adfdf.png";
-const CHILLI_IMAGE = "/red_chills.jpg"; // swap with your actual filename under /public
+const VEGETABLE_IMAGE = "/uploads/Managu_right_90b0fbbca0.jpeg";
+const CHILLI_IMAGE = "/flake_powder.png";
 
 const STATS = [
   { value: "500+", label: "Farmers partnered" },
@@ -15,165 +15,51 @@ const STATS = [
 export default function HeroSection() {
   return (
     <section
-      className="relative overflow-hidden"
-      style={{ minHeight: "92vh", background: "#0e1a0c" }}
+      className="relative flex flex-col lg:flex-row"
+      style={{ minHeight: "100vh", background: "#0e1a0c" }}
     >
-      {/* ── SPLIT PANELS ─────────────────────────────────────────────── */}
+      {/* ── LEFT: Full-bleed vegetable image ─────────────────────────── */}
       <div
-        className="absolute inset-0 flex"
-        style={{ minHeight: "92vh" }}
+        className="relative w-full lg:w-[57%] flex-shrink-0"
+        style={{ minHeight: "42vh" }}
       >
-        {/* LEFT PANEL — Vegetables */}
-        <div className="relative flex-1 overflow-hidden">
-          <img
-            src={getStrapiURL(VEGETABLE_IMAGE)}
-            alt="Fresh vegetables sourced from Kitale farms"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "60% center", opacity: 0.6 }}
-          />
-          {/* Directional dark wash — left-heavy so headline stays legible */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to right, rgba(14,26,12,0.92) 0%, rgba(14,26,12,0.68) 55%, rgba(14,26,12,0.18) 100%)",
-            }}
-          />
-          {/* Bottom product label */}
-          <div
-            className="absolute bottom-8 left-0 right-0 flex justify-center"
-            style={{ zIndex: 5 }}
-          >
-            <div
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-              style={{
-                background: "rgba(14,26,12,0.70)",
-                border: "1px solid rgba(122,173,94,0.30)",
-              }}
-            >
-              <span
-                className="block w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ background: "#7aad5e" }}
-              />
-              <span
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: "#a8cc8c", fontSize: "9px" }}
-              >
-                Dried Vegetables
-              </span>
-            </div>
-          </div>
-        </div>
+        <img
+          src={getStrapiURL(VEGETABLE_IMAGE)}
+          alt="Fresh vegetables sourced from Kitale farms"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: "60% center" }}
+        />
 
-        {/* RIGHT PANEL — Dried Chilli */}
-        <div className="relative flex-1 overflow-hidden">
-          <img
-            src={CHILLI_IMAGE}
-            alt="Premium dried chilli products"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: "center", opacity: 0.62 }}
-          />
-          {/* Warm rust wash — mirrors left panel logic but in the chilli palette */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(to left, rgba(48,16,8,0.88) 0%, rgba(48,16,8,0.55) 55%, rgba(48,16,8,0.10) 100%)",
-            }}
-          />
-          {/* Right panel tagline — anchored bottom-left of its panel */}
-          <div
-            className="absolute inset-0 flex flex-col justify-end"
-            style={{ padding: "0 36px 80px", zIndex: 5 }}
-          >
-            <h2
-              className="font-bold leading-tight mb-2"
-              style={{
-                fontSize: "clamp(1.4rem, 2.4vw, 2rem)",
-                color: "#f5ede8",
-                letterSpacing: "-0.025em",
-              }}
-            >
-              Fiery. Dried.
-              <br />
-              <span style={{ color: "#c96b3a" }}>Export-ready.</span>
-            </h2>
-            <p
-              className="text-sm leading-relaxed"
-              style={{ color: "#c0a898", maxWidth: "220px" }}
-            >
-              Premium dried chilli varieties — bold flavour, consistent
-              heat, packed for global kitchens.
-            </p>
-          </div>
-
-          {/* Bottom product label */}
-          <div
-            className="absolute bottom-8 left-0 right-0 flex justify-center"
-            style={{ zIndex: 6 }}
-          >
-            <div
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full"
-              style={{
-                background: "rgba(48,16,8,0.70)",
-                border: "1px solid rgba(201,107,58,0.30)",
-              }}
-            >
-              <span
-                className="block w-1.5 h-1.5 rounded-full flex-shrink-0"
-                style={{ background: "#c96b3a" }}
-              />
-              <span
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: "#e2a882", fontSize: "9px" }}
-              >
-                Dried Chilli
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── CENTRE DIVIDER ───────────────────────────────────────────── */}
-      <div
-        className="absolute top-0 bottom-0"
-        style={{
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "1px",
-          background: "rgba(122,173,94,0.45)",
-          zIndex: 20,
-        }}
-      >
-        {/* Badge at midpoint */}
+        {/* Floating label pinned to bottom-left of image */}
         <div
-          className="absolute"
+          className="absolute bottom-6 left-6 flex items-center gap-2 px-4 py-2 rounded-full"
           style={{
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            background: "#0e1a0c",
-            border: "1px solid rgba(122,173,94,0.45)",
-            borderRadius: "20px",
-            padding: "6px 16px",
-            whiteSpace: "nowrap",
+            background: "rgba(14,26,12,0.78)",
+            border: "1px solid rgba(122,173,94,0.30)",
           }}
         >
           <span
-            className="font-semibold tracking-widest uppercase"
-            style={{ fontSize: "8px", color: "#7aad5e", letterSpacing: "0.14em" }}
+            className="block w-1.5 h-1.5 rounded-full"
+            style={{ background: "#7aad5e" }}
+          />
+          <span
+            className="font-semibold uppercase"
+            style={{ fontSize: "9px", color: "#a8cc8c", letterSpacing: "0.12em" }}
           >
-            Two products &middot; One mission
+            Dried Vegetables
           </span>
         </div>
       </div>
 
-      {/* ── HEADLINE CONTENT (left panel overlay) ───────────────────── */}
+      {/* ── RIGHT: Cream content panel ───────────────────────────────── */}
       <div
-        className="relative max-w-7xl mx-auto px-6 flex flex-col justify-center"
-        style={{ minHeight: "92vh", zIndex: 10, pointerEvents: "none" }}
+        className="flex-1 flex flex-col justify-center"
+        style={{
+          background: "#f5f0e8",
+          padding: "44px 32px",
+        }}
       >
-        <div className="max-w-xl py-28" style={{ pointerEvents: "auto" }}>
+        <div className="lg:px-8 xl:px-14">
 
           {/* Eyebrow */}
           <div className="flex items-center gap-3 mb-8">
@@ -182,8 +68,8 @@ export default function HeroSection() {
               style={{ width: "28px", background: "#7aad5e" }}
             />
             <span
-              className="font-semibold uppercase tracking-widest"
-              style={{ fontSize: "10px", color: "#a8cc8c", letterSpacing: "0.14em" }}
+              className="font-semibold uppercase"
+              style={{ fontSize: "10px", color: "#7aad5e", letterSpacing: "0.14em" }}
             >
               From Farm to Global Markets
             </span>
@@ -191,12 +77,12 @@ export default function HeroSection() {
 
           {/* Heading */}
           <h1
-            className="font-bold leading-none mb-5"
+            className="font-bold leading-none mb-6"
             style={{
-              fontSize: "clamp(2.6rem, 5.5vw, 4.4rem)",
-              color: "#f5f0e8",
-              letterSpacing: "-0.035em",
-              lineHeight: 1.04,
+              fontSize: "clamp(2rem, 3.4vw, 3.2rem)",
+              color: "#1a1612",
+              letterSpacing: "-0.03em",
+              lineHeight: 1.06,
             }}
           >
             Premium produce.
@@ -207,7 +93,7 @@ export default function HeroSection() {
           {/* Body */}
           <p
             className="leading-relaxed mb-10"
-            style={{ fontSize: "15px", color: "#c8bfaa", maxWidth: "480px" }}
+            style={{ fontSize: "15px", color: "#6b6258", maxWidth: "400px" }}
           >
             Dried vegetables and agricultural products sourced directly from
             smallholder farmers in Kitale — delivering quality, sustainability,
@@ -215,15 +101,15 @@ export default function HeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex gap-3 flex-wrap items-center">
+          <div className="flex gap-3 flex-wrap items-center mb-12">
             <Link
               href="/products"
               className="inline-flex items-center gap-2 font-semibold rounded-lg transition-colors"
               style={{
                 fontSize: "13px",
-                padding: "11px 24px",
-                background: "#7aad5e",
-                color: "#0e1a0c",
+                padding: "12px 26px",
+                background: "#1a1612",
+                color: "#f5f0e8",
                 letterSpacing: "0.02em",
               }}
             >
@@ -248,50 +134,91 @@ export default function HeroSection() {
               className="inline-flex items-center font-semibold rounded-lg transition-colors"
               style={{
                 fontSize: "13px",
-                padding: "11px 24px",
-                color: "#e8e0d0",
-                border: "1px solid rgba(255,255,255,0.18)",
+                padding: "12px 26px",
+                color: "#1a1612",
+                border: "1px solid #d4cdc0",
               }}
             >
               Our Story
             </Link>
           </div>
 
-          {/* Trust stats */}
+          {/* ── Chilli product card ──────────────────────────────────── */}
+          <div className="mb-10">
+            <div
+              className="overflow-hidden rounded-lg"
+              style={{ height: "250px", maxWidth: "340px" }}
+            >
+              <img
+                src={CHILLI_IMAGE}
+                alt="Premium dried chilli products"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="flex items-center gap-2 mt-3">
+              <span
+                className="block w-1.5 h-1.5 rounded-full"
+                style={{ background: "#c96b3a" }}
+              />
+              <span
+                className="font-semibold uppercase"
+                style={{ fontSize: "9px", color: "#c96b3a", letterSpacing: "0.12em" }}
+              >
+                Dried Chilli
+              </span>
+            </div>
+
+            <p
+              className="mt-2 leading-relaxed"
+              style={{ fontSize: "13px", color: "#8a7d6e", maxWidth: "280px" }}
+            >
+              Fiery. Dried. Export-ready. Bold flavour and consistent heat,
+              packed for global kitchens.
+            </p>
+          </div>
+
+          {/* ── Stats row with vertical dividers ─────────────────────── */}
           <div
-            className="flex gap-8 mt-14 pt-8 flex-wrap"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}
+            className="flex"
+            style={{ borderTop: "1px solid #d4cdc0", paddingTop: "24px" }}
           >
-            {STATS.map((item) => (
-              <div key={item.label}>
+            {STATS.map((item, i) => (
+              <div
+                key={item.label}
+                className="flex-1"
+                style={
+                  i < STATS.length - 1
+                    ? {
+                        borderRight: "1px solid #d4cdc0",
+                        paddingRight: "20px",
+                        marginRight: "20px",
+                      }
+                    : {}
+                }
+              >
                 <div
                   className="font-bold"
-                  style={{ fontSize: "18px", color: "#7aad5e" }}
+                  style={{ fontSize: "20px", color: "#1a1612" }}
                 >
                   {item.value}
                 </div>
                 <div
-                  className="mt-0.5"
-                  style={{ fontSize: "10px", color: "#8a7d6e" }}
+                  className="mt-1"
+                  style={{
+                    fontSize: "10px",
+                    color: "#8a7d6e",
+                    letterSpacing: "0.04em",
+                  }}
                 >
                   {item.label}
                 </div>
               </div>
             ))}
           </div>
+
         </div>
       </div>
-
-      {/* ── BOTTOM PAGE FADE ─────────────────────────────────────────── */}
-      <div
-        className="absolute bottom-0 left-0 right-0"
-        style={{
-          height: "96px",
-          background:
-            "linear-gradient(to bottom, transparent 0%, #f7f3ed 100%)",
-          zIndex: 15,
-        }}
-      />
     </section>
   );
 }
