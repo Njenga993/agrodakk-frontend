@@ -10,7 +10,7 @@ export default async function ContactPage() {
     settings = res?.data;
   } catch (e) {}
 
-  const email = settings?.contactEmail || "info@agrodakk.com";
+  const email = settings?.contactEmail || "agrodakk@gmail.com";
   const phone = settings?.contactPhone || null;
 
   const pathways = [

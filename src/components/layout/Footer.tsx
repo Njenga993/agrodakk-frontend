@@ -272,8 +272,8 @@ export default function Footer() {
                     </svg>
                   ),
                   content: (
-                    <a href="mailto:info@agrodakk.com" style={{ color: "#6a7d62" }}>
-                      info@agrodakk.com
+                    <a href="mailto:agrodakk@gmail.com" style={{ color: "#6a7d62" }}>
+                      agrodakk@gmail.com
                     </a>
                   ),
                 },

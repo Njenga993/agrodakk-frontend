@@ -39,10 +39,10 @@ export default function NotificationBar() {
         {/* Right: contact details */}
         <div className="hidden md:flex items-center gap-4 flex-shrink-0 text-xs" style={{ color: "#556650" }}>
           <a
-            href="mailto:info@agrodakk.com"
+            href="mailto:agrodakk@gmail.com"
             className="transition-colors hover:text-[#a8cc8c]"
           >
-            info@agrodakk.com
+            agrodakk@gmail.com
           </a>
           <span className="w-px h-3.5" style={{ background: "#2e3d2a" }} />
           <span>Kitale, Kenya</span>

@@ -1,9 +1,30 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { getStrapiURL } from "@/lib/strapi";
 
-const VEGETABLE_IMAGE = "/uploads/Managu_right_90b0fbbca0.jpeg";
+// Add/remove image paths here to control what appears in the slideshow
+const HERO_SLIDES = [
+  {
+    src: "/uploads/Managu_right_90b0fbbca0.jpeg",
+    alt: "Fresh vegetables sourced from Kitale farms",
+    position: "60% center",
+  },
+  {
+    src: "/uploads/flake_powder_b46ce65d04.png",
+    alt: "Sukuma wiki harvested from Kitale farms",
+    position: "center center",
+  },
+  {
+    src: "/uploads/image_0efbc2518e.png",
+    alt: "Vegetables drying naturally in the sun",
+    position: "center 40%",
+  },
+];
+
+const SLIDE_INTERVAL_MS = 5000;
+
 const CHILLI_IMAGE = "/flake_powder.png";
 
 const STATS = [
@@ -13,21 +34,45 @@ const STATS = [
 ];
 
 export default function HeroSection() {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  useEffect(() => {
+    if (HERO_SLIDES.length <= 1) return;
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, SLIDE_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section
       className="relative flex flex-col lg:flex-row"
       style={{ minHeight: "100vh", background: "#0e1a0c" }}
     >
-      {/* ── LEFT: Full-bleed vegetable image ─────────────────────────── */}
+      {/* ── LEFT: Full-bleed vegetable image slideshow ───────────────── */}
       <div
-        className="relative w-full lg:w-[57%] flex-shrink-0"
+        className="relative w-full lg:w-[57%] flex-shrink-0 overflow-hidden"
         style={{ minHeight: "42vh" }}
       >
-        <img
-          src={getStrapiURL(VEGETABLE_IMAGE)}
-          alt="Fresh vegetables sourced from Kitale farms"
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ objectPosition: "60% center" }}
+        {HERO_SLIDES.map((slide, i) => (
+          <img
+            key={slide.src}
+            src={getStrapiURL(slide.src)}
+            alt={slide.alt}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+            style={{
+              objectPosition: slide.position,
+              opacity: i === activeSlide ? 1 : 0,
+            }}
+          />
+        ))}
+
+        {/* Subtle gradient so the floating label stays legible over any slide */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
+          style={{
+            background: "linear-gradient(to top, rgba(14,26,12,0.55), transparent)",
+          }}
         />
 
         {/* Floating label pinned to bottom-left of image */}
@@ -49,6 +94,27 @@ export default function HeroSection() {
             Dried Vegetables
           </span>
         </div>
+
+        {/* Slide indicator dots */}
+        {HERO_SLIDES.length > 1 && (
+          <div className="absolute bottom-6 right-6 flex items-center gap-2">
+            {HERO_SLIDES.map((slide, i) => (
+              <button
+                key={slide.src}
+                type="button"
+                aria-label={`Show slide ${i + 1}`}
+                onClick={() => setActiveSlide(i)}
+                className="rounded-full transition-all duration-300"
+                style={{
+                  width: i === activeSlide ? "20px" : "6px",
+                  height: "6px",
+                  background:
+                    i === activeSlide ? "#7aad5e" : "rgba(245,240,232,0.45)",
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* ── RIGHT: Cream content panel ───────────────────────────────── */}

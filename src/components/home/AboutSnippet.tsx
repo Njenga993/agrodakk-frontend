@@ -9,7 +9,7 @@ interface AboutSnippetProps {
 }
 
 const images = [
-  { src: "/uploads/image_f93a3adfdf.png", alt: "Seedings of the vegetables" },
+  { src: "/uploads/image_f93a3adfdf.png", alt: "Vegetable seedlings" },
   { src: "/uploads/TK_16872_0e61895da7.jpg", alt: "vegetables ready for processing" },
   { src: "/uploads/Managu_right_90b0fbbca0.jpeg", alt: "Packed products ready for export" },
 ];
