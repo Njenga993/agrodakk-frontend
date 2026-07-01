@@ -1,7 +1,17 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBlog } from "@/lib/api";
+import { getBlog, getBlogs } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
+
+// Add this function for static generation
+export async function generateStaticParams() {
+  const res = await getBlogs().catch(() => ({ data: [] }));
+  const blogs = res.data || [];
+  
+  return blogs.map((blog: any) => ({
+    slug: blog.slug,
+  }));
+}
 
 export default async function BlogDetailPage({
   params,
@@ -15,11 +25,13 @@ export default async function BlogDetailPage({
   if (!blog) notFound();
 
   const coverImageUrl = blog.coverImage?.url || blog.images?.[0]?.url;
-  const coverImageAlt = blog.coverImage?.alternativeText || blog.images?.[0]?.alternativeText || blog.title;
+  const coverImageAlt =
+    blog.coverImage?.alternativeText ||
+    blog.images?.[0]?.alternativeText ||
+    blog.title;
 
   return (
     <main style={{ background: "#f7f3ed" }}>
-
       {/* ── Cinematic Hero Banner ── */}
       <section
         className="relative flex items-end overflow-hidden"
@@ -45,17 +57,35 @@ export default async function BlogDetailPage({
         {/* Bottom fade to cream */}
         <div
           className="absolute bottom-0 left-0 right-0 h-40"
-          style={{ background: "linear-gradient(to bottom, transparent, #f7f3ed)" }}
+          style={{
+            background: "linear-gradient(to bottom, transparent, #f7f3ed)",
+          }}
         />
 
         <div className="relative max-w-4xl mx-auto px-5 lg:px-8 w-full pb-24 pt-40">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 text-xs mb-8" style={{ color: "#6a7d62" }}>
-            <Link href="/" className="hover:text-white transition-colors duration-200">Home</Link>
+          <nav
+            className="flex items-center gap-2 text-xs mb-8"
+            style={{ color: "#6a7d62" }}
+          >
+            <Link
+              href="/"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Home
+            </Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-white transition-colors duration-200">Blog</Link>
+            <Link
+              href="/blog"
+              className="hover:text-white transition-colors duration-200"
+            >
+              Blog
+            </Link>
             <span>/</span>
-            <span className="truncate max-w-[200px] sm:max-w-none" style={{ color: "#a8cc8c" }}>
+            <span
+              className="truncate max-w-[200px] sm:max-w-none"
+              style={{ color: "#a8cc8c" }}
+            >
               {blog.title}
             </span>
           </nav>
@@ -65,18 +95,25 @@ export default async function BlogDetailPage({
             {blog.category && (
               <span
                 className="text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded"
-                style={{ color: "#a8cc8c", background: "rgba(122,173,94,0.15)", border: "1px solid rgba(122,173,94,0.2)" }}
+                style={{
+                  color: "#a8cc8c",
+                  background: "rgba(122,173,94,0.15)",
+                  border: "1px solid rgba(122,173,94,0.2)",
+                }}
               >
                 {blog.category}
               </span>
             )}
             {blog.publishedDate && (
               <span className="text-xs" style={{ color: "#6a7d62" }}>
-                {new Date(blog.publishedDate).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
+                {new Date(blog.publishedDate).toLocaleDateString(
+                  "en-US",
+                  {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }
+                )}
               </span>
             )}
           </div>
@@ -98,12 +135,18 @@ export default async function BlogDetailPage({
             <div className="flex items-center gap-3">
               <div
                 className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold"
-                style={{ background: "rgba(122,173,94,0.2)", color: "#7aad5e" }}
+                style={{
+                  background: "rgba(122,173,94,0.2)",
+                  color: "#7aad5e",
+                }}
               >
                 {blog.author.charAt(0).toUpperCase()}
               </div>
               <div>
-                <p className="text-sm font-medium" style={{ color: "#e8f0e0" }}>
+                <p
+                  className="text-sm font-medium"
+                  style={{ color: "#e8f0e0" }}
+                >
                   {blog.author}
                 </p>
                 <p className="text-xs" style={{ color: "#4a6041" }}>
@@ -116,13 +159,18 @@ export default async function BlogDetailPage({
       </section>
 
       {/* ── Article Content ── */}
-      <section className="py-16 md:py-24" style={{ background: "#f7f3ed" }}>
+      <section
+        className="py-16 md:py-24"
+        style={{ background: "#f7f3ed" }}
+      >
         <div className="max-w-3xl mx-auto px-5 lg:px-8">
-          
           {/* White "Paper" Card */}
           <div
             className="rounded-2xl p-8 md:p-12 lg:p-16"
-            style={{ background: "#ffffff", border: "1px solid #e4ddd2" }}
+            style={{
+              background: "#ffffff",
+              border: "1px solid #e4ddd2",
+            }}
           >
             {/* Rich Text / Prose Area */}
             <div
@@ -167,16 +215,46 @@ export default async function BlogDetailPage({
                 blog.content.map((block: any, i: number) => {
                   // Handle different block types if they exist, fallback to text extraction
                   if (block.type === "paragraph" || !block.type) {
-                    return <p key={i}>{block.children?.map((c: any) => c.text).join("")}</p>;
+                    return (
+                      <p key={i}>
+                        {block.children
+                          ?.map((c: any) => c.text)
+                          .join("")}
+                      </p>
+                    );
                   }
-                  if (block.type === "heading" && block.level === 2) {
-                    return <h2 key={i}>{block.children?.map((c: any) => c.text).join("")}</h2>;
+                  if (
+                    block.type === "heading" &&
+                    block.level === 2
+                  ) {
+                    return (
+                      <h2 key={i}>
+                        {block.children
+                          ?.map((c: any) => c.text)
+                          .join("")}
+                      </h2>
+                    );
                   }
-                  if (block.type === "heading" && block.level === 3) {
-                    return <h3 key={i}>{block.children?.map((c: any) => c.text).join("")}</h3>;
+                  if (
+                    block.type === "heading" &&
+                    block.level === 3
+                  ) {
+                    return (
+                      <h3 key={i}>
+                        {block.children
+                          ?.map((c: any) => c.text)
+                          .join("")}
+                      </h3>
+                    );
                   }
                   // Fallback for unknown blocks
-                  return <p key={i}>{block.children?.map((c: any) => c.text).join("")}</p>;
+                  return (
+                    <p key={i}>
+                      {block.children
+                        ?.map((c: any) => c.text)
+                        .join("")}
+                    </p>
+                  );
                 })
               ) : (
                 <p>{blog.content}</p>
@@ -193,10 +271,10 @@ export default async function BlogDetailPage({
                 px-6 py-3 rounded-full transition-all duration-200
                 hover:shadow-sm
               "
-              style={{ 
-                background: "#ffffff", 
-                color: "#3d5c35", 
-                border: "1px solid #e4ddd2" 
+              style={{
+                background: "#ffffff",
+                color: "#3d5c35",
+                border: "1px solid #e4ddd2",
               }}
             >
               <svg
@@ -216,7 +294,6 @@ export default async function BlogDetailPage({
           </div>
         </div>
       </section>
-
     </main>
   );
 }
