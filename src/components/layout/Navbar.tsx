@@ -1,12 +1,12 @@
+
 "use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { getStrapiURL } from "@/lib/strapi";
 
-const LOGO_URL = getStrapiURL("/uploads/logo_all_removebg_preview_d5dececa81.png");
+const LOGO_URL = "/uploads/logo_all_removebg_preview_d5dececa81.png";
 
 const navLinks = [
   { href: "/", label: "Home" },

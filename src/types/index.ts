@@ -1,10 +1,11 @@
+
 export interface StrapiImage {
   id: number;
   documentId: string;
   url: string;
   alternativeText: string | null;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
 }
 
 export interface ProductCategory {
@@ -13,7 +14,7 @@ export interface ProductCategory {
   name: string;
   slug: string;
   description: string | null;
-  featured: boolean;
+  featured?: boolean;
 }
 
 export interface Product {
@@ -37,24 +38,23 @@ export interface Service {
   slug: string;
   subtitle: string | null;
   description: string | null;
-  images: StrapiImage[];
+  images: StrapiImage[] | null;
   featured: boolean;
   order: number;
 }
-
 
 export interface BlogArticle {
   id: number;
   documentId: string;
   title: string;
   slug: string;
-  content: string | null;
+  content: any | null;
   excerpt: string | null;
   images: StrapiImage[];
   coverImage: StrapiImage | null;
   author: string | null;
   publishedDate: string | null;
-  category: string | null;
+  category?: string | null;
   featured: boolean;
 }
 

@@ -1,8 +1,8 @@
+
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { getStrapiURL } from "@/lib/strapi";
 
 // Add/remove image paths here to control what appears in the slideshow
 const HERO_SLIDES = [
@@ -57,7 +57,7 @@ export default function HeroSection() {
         {HERO_SLIDES.map((slide, i) => (
           <img
             key={slide.src}
-            src={getStrapiURL(slide.src)}
+            src={slide.src}
             alt={slide.alt}
             className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
             style={{

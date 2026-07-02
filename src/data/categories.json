@@ -1,0 +1,165 @@
+{
+  "data": [
+    {
+      "id": 4,
+      "documentId": "dkz400j8kyuqr5jg51rrr8b3",
+      "name": "Chillies",
+      "slug": "chillies",
+      "description": null,
+      "featured": false,
+      "createdAt": "2026-06-14T08:16:44.515Z",
+      "updatedAt": "2026-06-14T09:07:26.595Z",
+      "publishedAt": "2026-06-14T09:07:26.611Z",
+      "icon": null,
+      "products": [
+        {
+          "id": 36,
+          "documentId": "iklugbyefe5sw9m2jndg8vcq",
+          "name": "Dried Red Chillies Flakes",
+          "slug": "dried-red-chillies",
+          "description": null,
+          "shortDescription": "Premium sun-dried red chillies flakes. Intense flavor and heat. Export-grade quality.",
+          "specifications": null,
+          "price": null,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-14T09:10:28.389Z",
+          "updatedAt": "2026-06-29T06:06:05.359Z",
+          "publishedAt": "2026-06-29T06:06:05.427Z"
+        },
+        {
+          "id": 35,
+          "documentId": "bncd15cu0a21upwq0mngqqbg",
+          "name": "Dried Red Chillies Powder",
+          "slug": "dried-green-chillies",
+          "description": null,
+          "shortDescription": "Mild red chilly powder, carefully dried to preserve flavor. Perfect for seasoning.",
+          "specifications": null,
+          "price": null,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-14T09:10:54.567Z",
+          "updatedAt": "2026-06-29T06:05:39.703Z",
+          "publishedAt": "2026-06-29T06:05:39.773Z"
+        },
+        {
+          "id": 39,
+          "documentId": "f7yh39mnjr23pwvmqgod06la",
+          "name": "Dried Red Chillies Whole ",
+          "slug": "dried-red-chillies-whole",
+          "description": null,
+          "shortDescription": "Premium sun-dried red chillies flakes. Intense flavor and heat. Export-grade quality.",
+          "specifications": null,
+          "price": null,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-30T18:44:08.256Z",
+          "updatedAt": "2026-06-30T18:45:55.077Z",
+          "publishedAt": "2026-06-30T18:45:55.152Z"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "documentId": "uv3judff25arqqazpc0itdyz",
+      "name": "Dried Vegetables",
+      "slug": "dried-vegetables",
+      "description": null,
+      "featured": false,
+      "createdAt": "2026-06-14T08:16:07.285Z",
+      "updatedAt": "2026-06-14T09:07:02.974Z",
+      "publishedAt": "2026-06-14T09:07:02.993Z",
+      "icon": null,
+      "products": [
+        {
+          "id": 26,
+          "documentId": "ohdddusgezn38qlujc6xgw4h",
+          "name": "Dried Managu",
+          "slug": "dried-managu",
+          "description": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "Sun-dried African nightshade, rich in iron and vitamins. Sourced from Kitale smallholder farmers.",
+                  "type": "text"
+                }
+              ]
+            }
+          ],
+          "shortDescription": "Sun-dried African nightshade, rich in iron and vitamins.",
+          "specifications": null,
+          "price": 250,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-14T08:18:16.035Z",
+          "updatedAt": "2026-06-25T06:05:21.552Z",
+          "publishedAt": "2026-06-25T06:05:21.621Z"
+        },
+        {
+          "id": 23,
+          "documentId": "ye0gb4exle0gvbjgg12qt75n",
+          "name": "Dried Saga",
+          "slug": "dried-saga",
+          "description": null,
+          "shortDescription": "Naturally dried spider plant leaves. High in calcium and fiber. Carefully sorted and packed.",
+          "specifications": null,
+          "price": 250,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-14T09:09:34.608Z",
+          "updatedAt": "2026-06-25T06:04:11.876Z",
+          "publishedAt": "2026-06-25T06:04:11.946Z"
+        },
+        {
+          "id": 27,
+          "documentId": "nwg513uaw6kqbvkp62kxowu5",
+          "name": "Dried Kunde",
+          "slug": "dried-kunde",
+          "description": null,
+          "shortDescription": "Sun-dried cowpea leaves. Rich in protein and essential minerals. Farm-fresh quality.",
+          "specifications": null,
+          "price": 250,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-14T09:09:59.735Z",
+          "updatedAt": "2026-06-25T06:05:34.704Z",
+          "publishedAt": "2026-06-25T06:05:34.774Z"
+        },
+        {
+          "id": 30,
+          "documentId": "zvjg3wkyh8pz2qnr6rk0s1z7",
+          "name": "Dried Terere",
+          "slug": "dried-terere",
+          "description": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "Sun-dried Terere , rich in iron and vitamins. Sourced from Kitale smallholder farmers.",
+                  "type": "text"
+                }
+              ]
+            }
+          ],
+          "shortDescription": "Sun-dried Terere , rich in iron and vitamins. Sourced from Kitale smallholder farmers.",
+          "specifications": null,
+          "price": 250,
+          "featured": true,
+          "inStock": true,
+          "createdAt": "2026-06-24T19:09:45.642Z",
+          "updatedAt": "2026-06-28T08:25:10.872Z",
+          "publishedAt": "2026-06-28T08:25:10.944Z"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 2
+    }
+  }
+}

@@ -1,4 +1,9 @@
-import { fetchAPI } from "./strapi";
+﻿
+import productsData from '@/data/products.json';
+import categoriesData from '@/data/categories.json';
+import servicesData from '@/data/services.json';
+import blogsData from '@/data/blogs.json';
+import siteSettingsData from '@/data/site-settings.json';
 import type {
   Product,
   ProductCategory,
@@ -7,70 +12,78 @@ import type {
   SiteSettings,
   StrapiCollectionResponse,
   StrapiResponse,
-} from "@/types";
+} from '@/types';
 
-export async function getProducts() {
-  return fetchAPI<StrapiCollectionResponse<Product>>(
-    "/products?populate[product_category][fields][0]=name&populate[product_category][fields][1]=slug&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&sort=name:asc&pagination[pageSize]=100"
-  );
+// Helper to simulate async (keeps same API shape)
+function respond<T>(data: T): Promise<T> {
+  return Promise.resolve(data);
 }
 
-export async function getFeaturedProducts() {
-  return fetchAPI<StrapiCollectionResponse<Product>>(
-    "/products?filters[featured][$eq]=true&populate[product_category][fields][0]=name&populate[product_category][fields][1]=slug&populate[images][fields][0]=url&populate[images][fields][1]=alternativeText&sort=name:asc"
-  );
+export function getProducts() {
+  return respond<StrapiCollectionResponse<Product>>(productsData as unknown as StrapiCollectionResponse<Product>);
 }
 
-export async function getProduct(slug: string) {
-  return fetchAPI<StrapiCollectionResponse<Product>>(
-    `/products?filters[slug][$eq]=${slug}&populate[0]=product_category&populate[1]=images`
-  );
+export function getFeaturedProducts() {
+  const data = productsData as unknown as StrapiCollectionResponse<Product>;
+  const featured = data.data.filter(p => p.featured);
+  return respond<StrapiCollectionResponse<Product>>({
+    data: featured,
+    meta: data.meta,
+  });
 }
 
-export async function getCategories() {
-  return fetchAPI<StrapiCollectionResponse<ProductCategory>>(
-    "/product-categories?populate=*&sort=name:asc"
-  );
+export function getProduct(slug: string) {
+  const data = productsData as unknown as StrapiCollectionResponse<Product>;
+  const product = data.data.filter(p => p.slug === slug);
+  return respond<StrapiCollectionResponse<Product>>({
+    data: product,
+    meta: { pagination: { page: 1, pageSize: 1, pageCount: 1, total: product.length } },
+  });
 }
 
-export async function getServices() {
-  return fetchAPI<StrapiCollectionResponse<Service>>(
-    "/services?populate=*&sort=order:asc"
-  );
+export function getCategories() {
+  return respond<StrapiCollectionResponse<ProductCategory>>(categoriesData as unknown as StrapiCollectionResponse<ProductCategory>);
 }
 
-export async function getFeaturedServices() {
-  return fetchAPI<StrapiCollectionResponse<Service>>(
-    "/services?filters[featured][$eq]=true&populate=*&sort=order:asc"
-  );
+export function getServices() {
+  return respond<StrapiCollectionResponse<Service>>(servicesData as unknown as StrapiCollectionResponse<Service>);
 }
 
-export async function getBlogs() {
-  return fetchAPI<StrapiCollectionResponse<BlogArticle>>(
-    "/blog-articles?populate=*&sort=publishedDate:desc"
-  );
+export function getFeaturedServices() {
+  const data = servicesData as unknown as StrapiCollectionResponse<Service>;
+  const featured = data.data.filter(s => s.featured);
+  return respond<StrapiCollectionResponse<Service>>({
+    data: featured,
+    meta: data.meta,
+  });
 }
 
-export async function getFeaturedBlogs() {
-  return fetchAPI<StrapiCollectionResponse<BlogArticle>>(
-    "/blog-articles?filters[featured][$eq]=true&populate=*&sort=publishedDate:desc&pagination[limit]=2"
-  );
+export function getBlogs() {
+  return respond<StrapiCollectionResponse<BlogArticle>>(blogsData as unknown as StrapiCollectionResponse<BlogArticle>);
 }
 
-export async function getBlog(slug: string) {
-  return fetchAPI<StrapiCollectionResponse<BlogArticle>>(
-    `/blog-articles?filters[slug][$eq]=${slug}&populate=*`
-  );
+export function getFeaturedBlogs() {
+  const data = blogsData as unknown as StrapiCollectionResponse<BlogArticle>;
+  const featured = data.data.filter(b => b.featured).slice(0, 2);
+  return respond<StrapiCollectionResponse<BlogArticle>>({
+    data: featured,
+    meta: data.meta,
+  });
 }
 
-export async function getPage(slug: string) {
-  return fetchAPI<StrapiCollectionResponse<any>>(
-    `/pages?filters[slug][$eq]=${slug}&populate[0]=sections.products&populate[1]=sections.services&populate[2]=sections.projects&populate[3]=sections.backgroundImage`
-  );
+export function getBlog(slug: string) {
+  const data = blogsData as unknown as StrapiCollectionResponse<BlogArticle>;
+  const blog = data.data.filter(b => b.slug === slug);
+  return respond<StrapiCollectionResponse<BlogArticle>>({
+    data: blog,
+    meta: { pagination: { page: 1, pageSize: 1, pageCount: 1, total: blog.length } },
+  });
 }
 
-export async function getSiteSettings() {
-  return fetchAPI<StrapiResponse<SiteSettings>>(
-    "/site-setting?populate=*"
-  );
+export function getPage(slug: string) {
+  return respond<StrapiCollectionResponse<any>>({ data: [], meta: { pagination: { page: 1, pageSize: 0, pageCount: 0, total: 0 } } });
+}
+
+export function getSiteSettings() {
+  return respond<StrapiResponse<SiteSettings>>(siteSettingsData as unknown as StrapiResponse<SiteSettings>);
 }

@@ -1,0 +1,1407 @@
+{
+  "data": [
+    {
+      "id": 18,
+      "documentId": "mop1atojiqtaqfd5p6n4elj7",
+      "title": "Food Safety Standards for Export-Ready Dried Vegetables",
+      "slug": "food-safety-standards-for-export-ready-dried-vegetables",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Exporting dried vegetables to international markets requires strict adherence to food safety standards. For Kenyan producers, understanding and meeting these requirements is essential for accessing premium markets.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Key certifications for dried vegetable exports include:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- HACCP (Hazard Analysis Critical Control Point)— identifies and controls potential hazards throughout the production process",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- ISO 22000— international standard for food safety management systems",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- GlobalG.A.P. — good agricultural practices certification for farms",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Organic Certification — required for products marketed as organic in EU and US markets",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "AgroDakk Foods maintains rigorous quality control at every stage: from farm-level training on proper harvesting techniques to laboratory testing of finished products for contaminants, moisture content, and microbial safety.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Our processing facility follows strict hygiene protocols, and all products are traceable back to the specific farm and harvest date. This traceability is increasingly important for international buyers who want to verify the origin and quality of their food products.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-06-03",
+      "excerpt": "Understanding the certifications, testing protocols, and quality measures required to export dried vegetables to European and Middle Eastern markets.",
+      "author": "Mary Wanjiku",
+      "featured": false,
+      "createdAt": "2026-06-14T12:36:21.864Z",
+      "updatedAt": "2026-06-28T08:52:21.738Z",
+      "publishedAt": "2026-06-28T08:52:21.804Z",
+      "images": [
+        {
+          "id": 24,
+          "documentId": "qzmwtoph4it6q5xfj17bk5sy",
+          "name": "_TK16841.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 3600,
+          "height": 2400,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_TK_16841_fd37b5b09b.jpg",
+              "hash": "large_TK_16841_fd37b5b09b",
+              "mime": "image/jpeg",
+              "name": "large__TK16841.jpg",
+              "path": null,
+              "size": 100.75,
+              "width": 1000,
+              "height": 667,
+              "sizeInBytes": 100751
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_TK_16841_fd37b5b09b.jpg",
+              "hash": "small_TK_16841_fd37b5b09b",
+              "mime": "image/jpeg",
+              "name": "small__TK16841.jpg",
+              "path": null,
+              "size": 36.72,
+              "width": 500,
+              "height": 333,
+              "sizeInBytes": 36717
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_TK_16841_fd37b5b09b.jpg",
+              "hash": "medium_TK_16841_fd37b5b09b",
+              "mime": "image/jpeg",
+              "name": "medium__TK16841.jpg",
+              "path": null,
+              "size": 66.55,
+              "width": 750,
+              "height": 500,
+              "sizeInBytes": 66547
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_TK_16841_fd37b5b09b.jpg",
+              "hash": "thumbnail_TK_16841_fd37b5b09b",
+              "mime": "image/jpeg",
+              "name": "thumbnail__TK16841.jpg",
+              "path": null,
+              "size": 11.88,
+              "width": 234,
+              "height": 156,
+              "sizeInBytes": 11879
+            }
+          },
+          "hash": "TK_16841_fd37b5b09b",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 679.06,
+          "url": "/uploads/TK_16841_fd37b5b09b.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-28T08:50:08.184Z",
+          "updatedAt": "2026-06-28T08:50:08.184Z",
+          "publishedAt": "2026-06-28T08:50:08.184Z"
+        }
+      ],
+      "coverImage": {
+        "id": 24,
+        "documentId": "qzmwtoph4it6q5xfj17bk5sy",
+        "name": "_TK16841.jpg",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 3600,
+        "height": 2400,
+        "formats": {
+          "large": {
+            "ext": ".jpg",
+            "url": "/uploads/large_TK_16841_fd37b5b09b.jpg",
+            "hash": "large_TK_16841_fd37b5b09b",
+            "mime": "image/jpeg",
+            "name": "large__TK16841.jpg",
+            "path": null,
+            "size": 100.75,
+            "width": 1000,
+            "height": 667,
+            "sizeInBytes": 100751
+          },
+          "small": {
+            "ext": ".jpg",
+            "url": "/uploads/small_TK_16841_fd37b5b09b.jpg",
+            "hash": "small_TK_16841_fd37b5b09b",
+            "mime": "image/jpeg",
+            "name": "small__TK16841.jpg",
+            "path": null,
+            "size": 36.72,
+            "width": 500,
+            "height": 333,
+            "sizeInBytes": 36717
+          },
+          "medium": {
+            "ext": ".jpg",
+            "url": "/uploads/medium_TK_16841_fd37b5b09b.jpg",
+            "hash": "medium_TK_16841_fd37b5b09b",
+            "mime": "image/jpeg",
+            "name": "medium__TK16841.jpg",
+            "path": null,
+            "size": 66.55,
+            "width": 750,
+            "height": 500,
+            "sizeInBytes": 66547
+          },
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_TK_16841_fd37b5b09b.jpg",
+            "hash": "thumbnail_TK_16841_fd37b5b09b",
+            "mime": "image/jpeg",
+            "name": "thumbnail__TK16841.jpg",
+            "path": null,
+            "size": 11.88,
+            "width": 234,
+            "height": 156,
+            "sizeInBytes": 11879
+          }
+        },
+        "hash": "TK_16841_fd37b5b09b",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 679.06,
+        "url": "/uploads/TK_16841_fd37b5b09b.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-28T08:50:08.184Z",
+        "updatedAt": "2026-06-28T08:50:08.184Z",
+        "publishedAt": "2026-06-28T08:50:08.184Z"
+      }
+    },
+    {
+      "id": 13,
+      "documentId": "tgp1pxigy3z06s4avasemgx6",
+      "title": "Building Resilient Farmer Cooperatives in Kenya",
+      "slug": "building-resilient-farmer-cooperatives-in-kenya",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Smallholder farmers in Kenya face significant challenges: limited access to markets, price volatility, and lack of bargaining power. Farmer cooperatives are changing this dynamic by pooling resources and creating collective strength.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "AgroDakk Foods partners with several farmer cooperatives in Trans Nzoia County. Through these partnerships, farmers gain access to:",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Bulk purchasing of seeds and organic inputs at discounted rates",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Shared processing and storage facilities",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Training programs on sustainable agriculture and quality standards",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Guaranteed purchase agreements at fair prices",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "- Direct access to international markets",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "One success story is the Kitale Smallholder Farmers Cooperative, which has grown from 15 members in 2019 to over 80 today. Members have seen their average household income increase by 65% since joining the cooperative and partnering with AgroDakk.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-04-28",
+      "excerpt": "\tHow collective farming models are helping smallholder farmers access better prices, training, and international markets.",
+      "author": "\tJames Kiprop",
+      "featured": false,
+      "createdAt": "2026-06-14T12:35:30.662Z",
+      "updatedAt": "2026-06-28T08:45:41.002Z",
+      "publishedAt": "2026-06-28T08:45:41.063Z",
+      "images": [
+        {
+          "id": 5,
+          "documentId": "uqhludk5vo8n813g0nybuziw",
+          "name": "Langat.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1500,
+          "height": 1000,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_Langat_a822855147.jpg",
+              "hash": "large_Langat_a822855147",
+              "mime": "image/jpeg",
+              "name": "large_Langat.jpg",
+              "path": null,
+              "size": 163.23,
+              "width": 1000,
+              "height": 667,
+              "sizeInBytes": 163234
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_Langat_a822855147.jpg",
+              "hash": "small_Langat_a822855147",
+              "mime": "image/jpeg",
+              "name": "small_Langat.jpg",
+              "path": null,
+              "size": 52.1,
+              "width": 500,
+              "height": 333,
+              "sizeInBytes": 52097
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_Langat_a822855147.jpg",
+              "hash": "medium_Langat_a822855147",
+              "mime": "image/jpeg",
+              "name": "medium_Langat.jpg",
+              "path": null,
+              "size": 104.78,
+              "width": 750,
+              "height": 500,
+              "sizeInBytes": 104775
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_Langat_a822855147.jpg",
+              "hash": "thumbnail_Langat_a822855147",
+              "mime": "image/jpeg",
+              "name": "thumbnail_Langat.jpg",
+              "path": null,
+              "size": 13.76,
+              "width": 234,
+              "height": 156,
+              "sizeInBytes": 13760
+            }
+          },
+          "hash": "Langat_a822855147",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 273.48,
+          "url": "/uploads/Langat_a822855147.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-14T10:29:17.441Z",
+          "updatedAt": "2026-06-14T10:29:17.441Z",
+          "publishedAt": "2026-06-14T10:29:17.442Z"
+        }
+      ],
+      "coverImage": {
+        "id": 22,
+        "documentId": "ybdhbr9fy9ps225dztwi1rpx",
+        "name": "image.png",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 2048,
+        "height": 1365,
+        "formats": {
+          "large": {
+            "ext": ".png",
+            "url": "/uploads/large_image_7335502be8.png",
+            "hash": "large_image_7335502be8",
+            "mime": "image/png",
+            "name": "large_image.png",
+            "path": null,
+            "size": 1212.83,
+            "width": 1000,
+            "height": 667,
+            "sizeInBytes": 1212829
+          },
+          "small": {
+            "ext": ".png",
+            "url": "/uploads/small_image_7335502be8.png",
+            "hash": "small_image_7335502be8",
+            "mime": "image/png",
+            "name": "small_image.png",
+            "path": null,
+            "size": 323.95,
+            "width": 500,
+            "height": 333,
+            "sizeInBytes": 323953
+          },
+          "medium": {
+            "ext": ".png",
+            "url": "/uploads/medium_image_7335502be8.png",
+            "hash": "medium_image_7335502be8",
+            "mime": "image/png",
+            "name": "medium_image.png",
+            "path": null,
+            "size": 691.65,
+            "width": 750,
+            "height": 500,
+            "sizeInBytes": 691650
+          },
+          "thumbnail": {
+            "ext": ".png",
+            "url": "/uploads/thumbnail_image_7335502be8.png",
+            "hash": "thumbnail_image_7335502be8",
+            "mime": "image/png",
+            "name": "thumbnail_image.png",
+            "path": null,
+            "size": 80.07,
+            "width": 234,
+            "height": 156,
+            "sizeInBytes": 80067
+          }
+        },
+        "hash": "image_7335502be8",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 1002.09,
+        "url": "/uploads/image_7335502be8.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-28T08:44:02.153Z",
+        "updatedAt": "2026-06-28T08:44:02.153Z",
+        "publishedAt": "2026-06-28T08:44:02.154Z"
+      }
+    },
+    {
+      "id": 17,
+      "documentId": "hne6kdkc57n09otr2itdbtjs",
+      "title": "Sustainable Farming Practices in Western Kenya",
+      "slug": "sustainable-farming-practices-in-western-kenya",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Trans Nzoia County, often called Kenya's breadbasket, is home to thousands of smallholder farmers who are now embracing sustainable agricultural practices. These methods not only protect the environment but also improve crop yields and farmer incomes.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Climate-smart agriculture techniques being adopted include crop rotation, organic composting, water conservation through drip irrigation, and agroforestry — planting trees alongside crops to improve soil health and provide shade.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "AgroDakk Foods works directly with 50+ farming families in the region, providing training on these sustainable methods. Farmers who implement these practices typically see a 30-40% increase in vegetable yields within two growing seasons.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Our model ensures that farmers are paid fair prices for their produce while maintaining strict quality standards. This approach creates a sustainable cycle: healthy soils produce better vegetables, which command higher prices, which allows farmers to invest back into their land.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-04-16",
+      "excerpt": "How smallholder farmers in Trans Nzoia County are adopting climate-smart agriculture to increase yields while protecting the environment.",
+      "author": "Mary Wanjiku",
+      "featured": true,
+      "createdAt": "2026-06-14T12:32:14.145Z",
+      "updatedAt": "2026-06-28T08:51:56.796Z",
+      "publishedAt": "2026-06-28T08:51:56.852Z",
+      "images": [
+        {
+          "id": 1,
+          "documentId": "b76k9zjjcxvhylb8cucv6jre",
+          "name": "hero_image_abc123",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1024,
+          "height": 683,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_TK_16834_0dfd79ced1.jpg",
+              "hash": "large_TK_16834_0dfd79ced1",
+              "mime": "image/jpeg",
+              "name": "large__TK16834.jpg",
+              "path": null,
+              "size": 171.8,
+              "width": 1000,
+              "height": 667,
+              "sizeInBytes": 171796
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_TK_16834_0dfd79ced1.jpg",
+              "hash": "small_TK_16834_0dfd79ced1",
+              "mime": "image/jpeg",
+              "name": "small__TK16834.jpg",
+              "path": null,
+              "size": 57.13,
+              "width": 500,
+              "height": 333,
+              "sizeInBytes": 57127
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_TK_16834_0dfd79ced1.jpg",
+              "hash": "medium_TK_16834_0dfd79ced1",
+              "mime": "image/jpeg",
+              "name": "medium__TK16834.jpg",
+              "path": null,
+              "size": 109.99,
+              "width": 750,
+              "height": 500,
+              "sizeInBytes": 109991
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_TK_16834_0dfd79ced1.jpg",
+              "hash": "thumbnail_TK_16834_0dfd79ced1",
+              "mime": "image/jpeg",
+              "name": "thumbnail__TK16834.jpg",
+              "path": null,
+              "size": 15.55,
+              "width": 234,
+              "height": 156,
+              "sizeInBytes": 15547
+            }
+          },
+          "hash": "TK_16834_0dfd79ced1",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 184.3,
+          "url": "/uploads/TK_16834_0dfd79ced1.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-14T10:08:32.827Z",
+          "updatedAt": "2026-06-14T10:09:06.580Z",
+          "publishedAt": "2026-06-14T10:08:32.827Z"
+        }
+      ],
+      "coverImage": {
+        "id": 23,
+        "documentId": "pka4lwud4hc0tiwyz07mc9a3",
+        "name": "image.png",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 2000,
+        "height": 2000,
+        "formats": {
+          "large": {
+            "ext": ".png",
+            "url": "/uploads/large_image_199c3b1658.png",
+            "hash": "large_image_199c3b1658",
+            "mime": "image/png",
+            "name": "large_image.png",
+            "path": null,
+            "size": 2122.44,
+            "width": 1000,
+            "height": 1000,
+            "sizeInBytes": 2122439
+          },
+          "small": {
+            "ext": ".png",
+            "url": "/uploads/small_image_199c3b1658.png",
+            "hash": "small_image_199c3b1658",
+            "mime": "image/png",
+            "name": "small_image.png",
+            "path": null,
+            "size": 576.58,
+            "width": 500,
+            "height": 500,
+            "sizeInBytes": 576575
+          },
+          "medium": {
+            "ext": ".png",
+            "url": "/uploads/medium_image_199c3b1658.png",
+            "hash": "medium_image_199c3b1658",
+            "mime": "image/png",
+            "name": "medium_image.png",
+            "path": null,
+            "size": 1248.09,
+            "width": 750,
+            "height": 750,
+            "sizeInBytes": 1248089
+          },
+          "thumbnail": {
+            "ext": ".png",
+            "url": "/uploads/thumbnail_image_199c3b1658.png",
+            "hash": "thumbnail_image_199c3b1658",
+            "mime": "image/png",
+            "name": "thumbnail_image.png",
+            "path": null,
+            "size": 62.77,
+            "width": 156,
+            "height": 156,
+            "sizeInBytes": 62774
+          }
+        },
+        "hash": "image_199c3b1658",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 1452.56,
+        "url": "/uploads/image_199c3b1658.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-28T08:44:47.092Z",
+        "updatedAt": "2026-06-28T08:44:47.092Z",
+        "publishedAt": "2026-06-28T08:44:47.092Z"
+      }
+    },
+    {
+      "id": 16,
+      "documentId": "bewmfefbkm3rvlx25w2ra7ws",
+      "title": "The Growing Global Demand for Dried Vegetables",
+      "slug": "the-growing-global-demand-for-dried-vegetables",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "The global dried vegetables market is experiencing unprecedented growth. According to recent industry reports, the market is projected to reach $107 billion by 2030, driven by increasing consumer demand for convenient, nutritious, and long-lasting food products.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "For Kenyan producers like AgroDakk Foods, this presents a significant opportunity. East Africa's climate is ideal for growing a wide variety of vegetables that can be naturally sun-dried — a process that preserves nutrients while eliminating the need for artificial preservatives.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Key markets driving this demand include the European Union, the Middle East, and increasingly, North America. Consumers in these regions are looking for clean-label products with transparent supply chains — exactly what Kenyan smallholder farmers can provide.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "At AgroDakk, we've seen demand for dried managu, saga, and kunde increase by over 200% in the past three years. Our farmer network has grown accordingly, from 20 partner farms to over 50 today.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-03-12",
+      "excerpt": "As global consumers shift toward healthier, shelf-stable food options, dried vegetables are emerging as a key player in international food supply chains.",
+      "author": "James Kiprop",
+      "featured": true,
+      "createdAt": "2026-06-14T12:31:18.017Z",
+      "updatedAt": "2026-06-28T08:51:20.431Z",
+      "publishedAt": "2026-06-28T08:51:20.489Z",
+      "images": [
+        {
+          "id": 21,
+          "documentId": "hwdbgohtk10n1nnpuk4e2dca",
+          "name": "image.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1440,
+          "height": 1440,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "/uploads/large_image_f93a3adfdf.png",
+              "hash": "large_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "large_image.png",
+              "path": null,
+              "size": 1826.13,
+              "width": 1000,
+              "height": 1000,
+              "sizeInBytes": 1826134
+            },
+            "small": {
+              "ext": ".png",
+              "url": "/uploads/small_image_f93a3adfdf.png",
+              "hash": "small_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "small_image.png",
+              "path": null,
+              "size": 471.6,
+              "width": 500,
+              "height": 500,
+              "sizeInBytes": 471598
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "/uploads/medium_image_f93a3adfdf.png",
+              "hash": "medium_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "medium_image.png",
+              "path": null,
+              "size": 1032.05,
+              "width": 750,
+              "height": 750,
+              "sizeInBytes": 1032048
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "/uploads/thumbnail_image_f93a3adfdf.png",
+              "hash": "thumbnail_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "thumbnail_image.png",
+              "path": null,
+              "size": 56.19,
+              "width": 156,
+              "height": 156,
+              "sizeInBytes": 56193
+            }
+          },
+          "hash": "image_f93a3adfdf",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 683.67,
+          "url": "/uploads/image_f93a3adfdf.png",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-28T08:43:22.535Z",
+          "updatedAt": "2026-06-28T08:43:22.535Z",
+          "publishedAt": "2026-06-28T08:43:22.535Z"
+        }
+      ],
+      "coverImage": {
+        "id": 21,
+        "documentId": "hwdbgohtk10n1nnpuk4e2dca",
+        "name": "image.png",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 1440,
+        "height": 1440,
+        "formats": {
+          "large": {
+            "ext": ".png",
+            "url": "/uploads/large_image_f93a3adfdf.png",
+            "hash": "large_image_f93a3adfdf",
+            "mime": "image/png",
+            "name": "large_image.png",
+            "path": null,
+            "size": 1826.13,
+            "width": 1000,
+            "height": 1000,
+            "sizeInBytes": 1826134
+          },
+          "small": {
+            "ext": ".png",
+            "url": "/uploads/small_image_f93a3adfdf.png",
+            "hash": "small_image_f93a3adfdf",
+            "mime": "image/png",
+            "name": "small_image.png",
+            "path": null,
+            "size": 471.6,
+            "width": 500,
+            "height": 500,
+            "sizeInBytes": 471598
+          },
+          "medium": {
+            "ext": ".png",
+            "url": "/uploads/medium_image_f93a3adfdf.png",
+            "hash": "medium_image_f93a3adfdf",
+            "mime": "image/png",
+            "name": "medium_image.png",
+            "path": null,
+            "size": 1032.05,
+            "width": 750,
+            "height": 750,
+            "sizeInBytes": 1032048
+          },
+          "thumbnail": {
+            "ext": ".png",
+            "url": "/uploads/thumbnail_image_f93a3adfdf.png",
+            "hash": "thumbnail_image_f93a3adfdf",
+            "mime": "image/png",
+            "name": "thumbnail_image.png",
+            "path": null,
+            "size": 56.19,
+            "width": 156,
+            "height": 156,
+            "sizeInBytes": 56193
+          }
+        },
+        "hash": "image_f93a3adfdf",
+        "ext": ".png",
+        "mime": "image/png",
+        "size": 683.67,
+        "url": "/uploads/image_f93a3adfdf.png",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-28T08:43:22.535Z",
+        "updatedAt": "2026-06-28T08:43:22.535Z",
+        "publishedAt": "2026-06-28T08:43:22.535Z"
+      }
+    },
+    {
+      "id": 19,
+      "documentId": "rpftbhear1a3guib3bll19u8",
+      "title": "From Farm to Export: The Journey of Dried Managu",
+      "slug": "from-farm-to-export-the-journey-of-dried-managu",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Dried managu (African nightshade) is one of the most popular products in AgroDakk's catalog — and for good reason. This leafy green vegetable is packed with iron, calcium, and vitamins A and C. But how does it get from a small farm in Kitale to a dinner plate in Berlin or Dubai?",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "The journey begins with our partner farmers, who grow managu using traditional methods enhanced with modern sustainable practices. The leaves are harvested by hand at peak ripeness — typically early in the morning when nutrient content is highest.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Within hours of harvesting, the managu arrives at our processing facility in Kitale. Here, it undergoes thorough washing, sorting, and quality inspection. Only the best leaves make the cut.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "The drying process is crucial. We use natural sun-drying methods that preserve the vegetable's nutritional profile while extending its shelf life to over 12 months. After drying, the product is tested for quality, packaged in food-grade materials, and prepared for shipment.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-03-11",
+      "excerpt": "Tracing the supply chain of one of Kenya's most nutritious indigenous vegetables — from small farms in Kitale to international dinner tables.",
+      "author": "Peter Ochieng",
+      "featured": false,
+      "createdAt": "2026-06-14T12:33:43.844Z",
+      "updatedAt": "2026-06-28T08:53:24.402Z",
+      "publishedAt": "2026-06-28T08:53:24.462Z",
+      "images": [
+        {
+          "id": 21,
+          "documentId": "hwdbgohtk10n1nnpuk4e2dca",
+          "name": "image.png",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 1440,
+          "height": 1440,
+          "formats": {
+            "large": {
+              "ext": ".png",
+              "url": "/uploads/large_image_f93a3adfdf.png",
+              "hash": "large_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "large_image.png",
+              "path": null,
+              "size": 1826.13,
+              "width": 1000,
+              "height": 1000,
+              "sizeInBytes": 1826134
+            },
+            "small": {
+              "ext": ".png",
+              "url": "/uploads/small_image_f93a3adfdf.png",
+              "hash": "small_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "small_image.png",
+              "path": null,
+              "size": 471.6,
+              "width": 500,
+              "height": 500,
+              "sizeInBytes": 471598
+            },
+            "medium": {
+              "ext": ".png",
+              "url": "/uploads/medium_image_f93a3adfdf.png",
+              "hash": "medium_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "medium_image.png",
+              "path": null,
+              "size": 1032.05,
+              "width": 750,
+              "height": 750,
+              "sizeInBytes": 1032048
+            },
+            "thumbnail": {
+              "ext": ".png",
+              "url": "/uploads/thumbnail_image_f93a3adfdf.png",
+              "hash": "thumbnail_image_f93a3adfdf",
+              "mime": "image/png",
+              "name": "thumbnail_image.png",
+              "path": null,
+              "size": 56.19,
+              "width": 156,
+              "height": 156,
+              "sizeInBytes": 56193
+            }
+          },
+          "hash": "image_f93a3adfdf",
+          "ext": ".png",
+          "mime": "image/png",
+          "size": 683.67,
+          "url": "/uploads/image_f93a3adfdf.png",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-28T08:43:22.535Z",
+          "updatedAt": "2026-06-28T08:43:22.535Z",
+          "publishedAt": "2026-06-28T08:43:22.535Z"
+        }
+      ],
+      "coverImage": {
+        "id": 16,
+        "documentId": "yiozrerb2xlaerpewr83ym30",
+        "name": "Managu_right.jpeg",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 1600,
+        "height": 972,
+        "formats": {
+          "large": {
+            "ext": ".jpeg",
+            "url": "/uploads/large_Managu_right_90b0fbbca0.jpeg",
+            "hash": "large_Managu_right_90b0fbbca0",
+            "mime": "image/jpeg",
+            "name": "large_Managu_right.jpeg",
+            "path": null,
+            "size": 88.75,
+            "width": 1000,
+            "height": 608,
+            "sizeInBytes": 88747
+          },
+          "small": {
+            "ext": ".jpeg",
+            "url": "/uploads/small_Managu_right_90b0fbbca0.jpeg",
+            "hash": "small_Managu_right_90b0fbbca0",
+            "mime": "image/jpeg",
+            "name": "small_Managu_right.jpeg",
+            "path": null,
+            "size": 28.17,
+            "width": 500,
+            "height": 304,
+            "sizeInBytes": 28172
+          },
+          "medium": {
+            "ext": ".jpeg",
+            "url": "/uploads/medium_Managu_right_90b0fbbca0.jpeg",
+            "hash": "medium_Managu_right_90b0fbbca0",
+            "mime": "image/jpeg",
+            "name": "medium_Managu_right.jpeg",
+            "path": null,
+            "size": 55.91,
+            "width": 750,
+            "height": 456,
+            "sizeInBytes": 55914
+          },
+          "thumbnail": {
+            "ext": ".jpeg",
+            "url": "/uploads/thumbnail_Managu_right_90b0fbbca0.jpeg",
+            "hash": "thumbnail_Managu_right_90b0fbbca0",
+            "mime": "image/jpeg",
+            "name": "thumbnail_Managu_right.jpeg",
+            "path": null,
+            "size": 8.44,
+            "width": 245,
+            "height": 149,
+            "sizeInBytes": 8435
+          }
+        },
+        "hash": "Managu_right_90b0fbbca0",
+        "ext": ".jpeg",
+        "mime": "image/jpeg",
+        "size": 181.12,
+        "url": "/uploads/Managu_right_90b0fbbca0.jpeg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-24T19:01:22.846Z",
+        "updatedAt": "2026-06-24T19:01:22.846Z",
+        "publishedAt": "2026-06-24T19:01:22.846Z"
+      }
+    },
+    {
+      "id": 15,
+      "documentId": "fgxkf8gfq8uhj3zb6bxxwast",
+      "title": "Why African Indigenous Vegetables Are the Next Superfood",
+      "slug": "why-african-indigenous-vegetables-are-the-next-superfood",
+      "content": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Move over kale and quinoa — African indigenous vegetables are emerging as the next big thing in global nutrition. Vegetables like managu, saga (spider plant), and kunde (cowpea leaves) have been staples in East African diets for generations, and now the rest of the world is catching on.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "These vegetables are nutritional powerhouses. Managu contains up to 4 times the iron of spinach. Saga is rich in calcium, making it excellent for bone health. Kunde provides high levels of plant-based protein — up to 25% by dry weight.",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "International nutritionists and food scientists are increasingly studying these vegetables for their potential to address malnutrition in both developing and developed countries. The UN Food and Agriculture Organization has identified several African indigenous vegetables as \"crops of the future.\"",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "For health-conscious consumers in Europe and North America, dried versions of these vegetables offer a convenient way to incorporate superfoods into their daily diets.",
+              "type": "text"
+            }
+          ]
+        }
+      ],
+      "publishedDate": "2026-01-20",
+      "excerpt": "Rich in iron, calcium, and vitamins, vegetables like managu, saga, and kunde are gaining recognition in global nutrition circles.",
+      "author": "\tDr. Amina Hassan",
+      "featured": false,
+      "createdAt": "2026-06-14T12:34:44.778Z",
+      "updatedAt": "2026-06-28T08:50:50.903Z",
+      "publishedAt": "2026-06-28T08:50:50.963Z",
+      "images": [
+        {
+          "id": 27,
+          "documentId": "fvcz7m1j85hhqdya3we916dj",
+          "name": "_TK16914.jpg",
+          "alternativeText": null,
+          "caption": null,
+          "focalPoint": null,
+          "width": 3600,
+          "height": 2880,
+          "formats": {
+            "large": {
+              "ext": ".jpg",
+              "url": "/uploads/large_TK_16914_ed0f6f941d.jpg",
+              "hash": "large_TK_16914_ed0f6f941d",
+              "mime": "image/jpeg",
+              "name": "large__TK16914.jpg",
+              "path": null,
+              "size": 166.38,
+              "width": 1000,
+              "height": 800,
+              "sizeInBytes": 166377
+            },
+            "small": {
+              "ext": ".jpg",
+              "url": "/uploads/small_TK_16914_ed0f6f941d.jpg",
+              "hash": "small_TK_16914_ed0f6f941d",
+              "mime": "image/jpeg",
+              "name": "small__TK16914.jpg",
+              "path": null,
+              "size": 48.82,
+              "width": 500,
+              "height": 400,
+              "sizeInBytes": 48819
+            },
+            "medium": {
+              "ext": ".jpg",
+              "url": "/uploads/medium_TK_16914_ed0f6f941d.jpg",
+              "hash": "medium_TK_16914_ed0f6f941d",
+              "mime": "image/jpeg",
+              "name": "medium__TK16914.jpg",
+              "path": null,
+              "size": 100.75,
+              "width": 750,
+              "height": 600,
+              "sizeInBytes": 100750
+            },
+            "thumbnail": {
+              "ext": ".jpg",
+              "url": "/uploads/thumbnail_TK_16914_ed0f6f941d.jpg",
+              "hash": "thumbnail_TK_16914_ed0f6f941d",
+              "mime": "image/jpeg",
+              "name": "thumbnail__TK16914.jpg",
+              "path": null,
+              "size": 10.07,
+              "width": 195,
+              "height": 156,
+              "sizeInBytes": 10070
+            }
+          },
+          "hash": "TK_16914_ed0f6f941d",
+          "ext": ".jpg",
+          "mime": "image/jpeg",
+          "size": 1381.35,
+          "url": "/uploads/TK_16914_ed0f6f941d.jpg",
+          "previewUrl": null,
+          "provider": "local",
+          "provider_metadata": null,
+          "createdAt": "2026-06-28T08:50:08.830Z",
+          "updatedAt": "2026-06-28T08:50:08.830Z",
+          "publishedAt": "2026-06-28T08:50:08.830Z"
+        }
+      ],
+      "coverImage": {
+        "id": 27,
+        "documentId": "fvcz7m1j85hhqdya3we916dj",
+        "name": "_TK16914.jpg",
+        "alternativeText": null,
+        "caption": null,
+        "focalPoint": null,
+        "width": 3600,
+        "height": 2880,
+        "formats": {
+          "large": {
+            "ext": ".jpg",
+            "url": "/uploads/large_TK_16914_ed0f6f941d.jpg",
+            "hash": "large_TK_16914_ed0f6f941d",
+            "mime": "image/jpeg",
+            "name": "large__TK16914.jpg",
+            "path": null,
+            "size": 166.38,
+            "width": 1000,
+            "height": 800,
+            "sizeInBytes": 166377
+          },
+          "small": {
+            "ext": ".jpg",
+            "url": "/uploads/small_TK_16914_ed0f6f941d.jpg",
+            "hash": "small_TK_16914_ed0f6f941d",
+            "mime": "image/jpeg",
+            "name": "small__TK16914.jpg",
+            "path": null,
+            "size": 48.82,
+            "width": 500,
+            "height": 400,
+            "sizeInBytes": 48819
+          },
+          "medium": {
+            "ext": ".jpg",
+            "url": "/uploads/medium_TK_16914_ed0f6f941d.jpg",
+            "hash": "medium_TK_16914_ed0f6f941d",
+            "mime": "image/jpeg",
+            "name": "medium__TK16914.jpg",
+            "path": null,
+            "size": 100.75,
+            "width": 750,
+            "height": 600,
+            "sizeInBytes": 100750
+          },
+          "thumbnail": {
+            "ext": ".jpg",
+            "url": "/uploads/thumbnail_TK_16914_ed0f6f941d.jpg",
+            "hash": "thumbnail_TK_16914_ed0f6f941d",
+            "mime": "image/jpeg",
+            "name": "thumbnail__TK16914.jpg",
+            "path": null,
+            "size": 10.07,
+            "width": 195,
+            "height": 156,
+            "sizeInBytes": 10070
+          }
+        },
+        "hash": "TK_16914_ed0f6f941d",
+        "ext": ".jpg",
+        "mime": "image/jpeg",
+        "size": 1381.35,
+        "url": "/uploads/TK_16914_ed0f6f941d.jpg",
+        "previewUrl": null,
+        "provider": "local",
+        "provider_metadata": null,
+        "createdAt": "2026-06-28T08:50:08.830Z",
+        "updatedAt": "2026-06-28T08:50:08.830Z",
+        "publishedAt": "2026-06-28T08:50:08.830Z"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 6
+    }
+  }
+}

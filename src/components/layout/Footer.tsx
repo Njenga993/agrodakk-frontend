@@ -2,9 +2,8 @@
 'use client'
 
 import Link from "next/link";
-import { getStrapiURL } from "@/lib/strapi";
 
-const LOGO_URL     = getStrapiURL("/uploads/logo_all_f2a38cd5c8.jpeg");
+const LOGO_URL     = "/uploads/logo_all_f2a38cd5c8.jpeg";
 const CHILLI_IMAGE = "/flake_powder.png"; // swap with your actual filename under /public
 
 const quickLinks = [

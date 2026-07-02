@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "documentId": "r9u6ghs6w8y55c15yj7rre1x",
+      "title": "Solar Installation",
+      "slug": "solar-installation",
+      "subtitle": "Professional rooftop solar installation",
+      "description": null,
+      "features": null,
+      "featured": false,
+      "order": 0,
+      "createdAt": "2026-06-14T08:19:09.884Z",
+      "updatedAt": "2026-06-14T08:19:11.947Z",
+      "publishedAt": "2026-06-14T08:19:11.968Z",
+      "icon": null,
+      "images": null
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}
