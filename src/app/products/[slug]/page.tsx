@@ -4,8 +4,6 @@ import { getProduct, getProducts } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 import AddToCartSection from "@/components/cart/AddToCartSection";
 
-const HIDDEN_PRICE_CATEGORIES = ["chillies", "chilli", "chili", "chilies"];
-
 // Add this function for static generation
 export async function generateStaticParams() {
   const res = await getProducts().catch(() => ({ data: [] }));
@@ -31,11 +29,8 @@ export default async function ProductDetailPage({
   const price = product.price ?? 500;
   const originalPrice = price * 1.2;
 
-  const categorySlug = product.product_category?.slug?.toLowerCase() ?? "";
-  const categoryName = product.product_category?.name?.toLowerCase() ?? "";
-  const hidePrice = HIDDEN_PRICE_CATEGORIES.some(
-    (c) => categorySlug.includes(c) || categoryName.includes(c)
-  );
+  // Pricing is hidden across all products — always show "Price available on request".
+  const hidePrice = true;
   const packSize = hidePrice ? "100g" : "50g";
 
   return (
@@ -215,7 +210,7 @@ export default async function ProductDetailPage({
               </span>
             </div>
 
-            {/* Price block — hidden for chillies */}
+            {/* Price block — hidden for all products */}
             <div
               className="mb-6 pb-6"
               style={{ borderBottom: "1px solid #f0ebe0" }}

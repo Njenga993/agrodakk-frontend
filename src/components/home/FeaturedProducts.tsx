@@ -3,8 +3,6 @@ import { getFeaturedProducts } from "@/lib/api";
 import { getStrapiURL } from "@/lib/strapi";
 import AddToCartButton from "@/components/cart/AddToCartButton";
 
-const HIDDEN_PRICE_CATEGORIES = ["chillies", "chilli", "chili", "chilies"];
-
 function StarRating({ rating = 4.5 }: { rating?: number }) {
   const fullStars = Math.floor(rating);
   const hasHalf = rating % 1 >= 0.5;
@@ -76,11 +74,8 @@ export default async function FeaturedProducts() {
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product: any) => {
-            const categorySlug = product.product_category?.slug?.toLowerCase() ?? "";
-            const categoryName = product.product_category?.name?.toLowerCase() ?? "";
-            const hidePrice = HIDDEN_PRICE_CATEGORIES.some(
-              (c) => categorySlug.includes(c) || categoryName.includes(c)
-            );
+            // Pricing is hidden across all products — always show "Price on request".
+            const hidePrice = true;
 
             return (
               <div
@@ -193,7 +188,7 @@ export default async function FeaturedProducts() {
                     </span>
                   </div>
 
-                  {/* Price + Cart — hidden for chillies */}
+                  {/* Price + Cart — hidden for all products, "Price on request" shown instead */}
                   <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid #f0ebe0" }}>
                     {hidePrice ? (
                       <Link
