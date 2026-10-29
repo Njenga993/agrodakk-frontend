@@ -112,7 +112,7 @@ export default function AboutSnippet({ siteName = "AgroDakk Foods" }: AboutSnipp
               </h2>
 
               <p className="text-base leading-relaxed mb-4" style={{ color: "#5a5347" }}>
-                {siteName} Ltd is a Kenyan agribusiness dedicated to producing and supplying
+                {siteName}  is a Kenyan agribusiness dedicated to producing and supplying
                 high-quality agricultural products for local and international markets. Based
                 in Kitale, we partner with smallholder farmers to promote sustainable
                 agriculture and inclusive market access.
